@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>WBOSS</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dialog.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/ui.jqgrid.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/style.min.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-xs" href="javascript:void(0)" onclick="toggleFull()">WBOSS Dashboard</a>
+                <!-- Single button -->
+             <div class="btn-group hidden-sm hidden-md hidden-lg">
+              <label class="btn dropdown-toggle" style="margin-top:10px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                 <span data-bind="text:user().staffName()"></span>
+                 <i class="fa fa-user fa-fw"></i>
+                 <span class="caret"></span>
+               </label>
+                <ul class="dropdown-menu pop-win">
+                 <!-- li><div style="padding:3px 20px;"><i class="fa fa-table fa-fw"></i> <span data-bind="text:user().userCode()"></span></div></li-->
+                 <li><div style="padding:3px 20px;"><i class="fa fa-users fa-fw"></i> <span data-bind="text:user().roleName()"></span></div></li>
+                 <li><a href="javascript:void(0)" class="btnChangeRole"><i class="fa fa-life-ring fa-fw"></i> 切换角色</a></li>
+                 <li class="divider"></li>
+                 <li class="input-group"><a data-pop-win="reset_password" class="pop-win-contoller" href="javascript:void(0)"><i class="fa fa-fw fa-gear"></i> 修改密码</a></li>
+                 <li role="separator" class="divider"></li>
+                 <li><a href="javascript:void(0)" class="btnLogout"><i class="fa fa-sign-out fa-fw"></i> 退出登陆</a></li>
+               </ul>
+             </div>
+            </div>
+             <ul class="nav navbar-top-links navbar-right hidden-xs">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"> <span data-bind="text:user().staffName()"></span><i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-user pop-win">
+                        <!-- li><div style="padding:3px 20px;"><i class="fa fa-table fa-fw"></i> <span data-bind="text:user().userCode()"></span></div></li-->
+                        <li><div style="padding:3px 20px;"><i class="fa fa-users fa-fw"></i> <span data-bind="text:user().roleName()"></span></div></li>
+                        <li><a href="javascript:void(0)" class="btnChangeRole"><i class="fa fa-life-ring fa-fw"></i> 切换角色</a></li>
+                        <li class="divider"></li>
+                        <li class="input-group"><a data-pop-win="reset_password" class="pop-win-contoller" href="javascript:void(0)"><i class="fa fa-fw fa-gear"></i> 修改密码</a></li>
+                        <li><a href="/admin/index.html?oldversion"><i class="fa fa-sign-in fa-fw"></i> 返回旧版</a></li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:void(0)" class="btnLogout"><i class="fa fa-sign-out fa-fw"></i> 退出登陆</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                 <ul class="nav" >
+                     <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" id="ipt-menu-search" placeholder="搜索...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" id="btn-search-menu" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                    </ul>
+                    <ul class="nav in menuList" id="side-menu"data-bind="foreach:user().menuList">
+                         <li data-bind="visible:isShow">
+                          <a class="menuListItem collapsed pointer" data-bind="attr:{'data-menu-id':menuId,'data-target':'#sub-menu-'+menuId()}" href="javascript:void(0)">
+                              <i class="fa fa-fw" data-bind="css:icon"></i>
+                               &nbsp;
+                              <span data-bind="text:menuName"></span>
+                              <span class="fa arrow"></span>
+                          </a>
+                          <ul data-bind="attr:{'id':'sub-menu-'+menuId()},foreach:subMenu,visible:isShow" class="collapse nav nav-second-level" style="border-right-color: rgba(49, 208, 71, 0.709804); border-right-width: 5px; border-right-style: solid; height: 0px;">
+                              <li class='subMenuListItem' data-bind="visible:isShow">
+                                  <a href="javascript:void(0)" class="subMenuItem" onclick="openTab(this)" data-bind="text:menuName,attr:{'id':'sub-menu-'+menuId(),'data-page-url':url,'data-menu-name':menuName}"></a>
+                                </li>
+                          </ul>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <ul data-bind="foreach:tabs" class="my-nav-tabs hidden-xs" style="padding-left: 252px;width:100%;overflow:hidden;">
+            <li class="my-nav-tabs-li" data-bind="attr:{id:id,'data-module':module},css:{'my-nav-tab-select':selected}">
+                <span class="my-nav-tab pointer" data-bind="text:name,click:$parent.tabClick"></span>
+                <span class="my-nav-tab-remove-icon pointer glyphicon glyphicon-remove-circle" data-bind="click:$parent.removeTabClick"></span>
+            </li>
+        </ul>
+        <div id="page-wrapper"  style="padding:0">
+            <div id="content">
+                 <img id="page-img-bg" src="img/index2.png" style="width:100%;"/>
+                 <div class="container-fluid view-animate-container tab_container" id="tabs" style="padding-top:15px"></div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-inverse navbar-brand nav navbar-bottom " style="width: 100%;text-align: center;color: #fff;color:#999;font-size:13px;height:30px;line-height:30px;padding:0" role="navigation">
+        <span>
+                © 2016 <span id="admin_system_info">沃云网络</span> 版权所有<span id="runningtime" class="hidden-xs" style="margin-left:20px;"></span>
+                <span class="hidden-sm hidden-lg hidden-md">xs</span>
+                <span class="hidden-xs hidden-sm hidden-lg">md</span>
+                <span class="hidden-xs hidden-lg hidden-md">sm</span>
+                <span class="hidden-xs hidden-sm hidden-md">lg</span>
+        </span>
+    </nav>
+<script src="js/enhance.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/metisMenu.js"></script> 
+<script src="js/md5.js"></script> 
+<script src="js/jquery.history.js"></script> 
+<script src="js/jquery.jqGrid.min.js"></script> 
+<script src="js/jquery.validate.js"></script> 
+<script src="js/jquery.metadata.js"></script> 
+<script src="js/additional-methods_zh_CN.js"></script> 
+<script src="js/jquery-validate.bootstrap-tooltip.js"></script> 
+<script src="js/jstree.js"></script> 
+<script src="js/jquery.serializeObject.min2.js"></script> 
+<script src="js/jquery.mac-address-formator.js"></script> 
+<script src="js/knockout-3.4.0.js"></script> 
+<script src="js/knockout.mapping-latest.js"></script> 
+<script src="js/bootstrap-dialog.min.js"></script> 
+<script src="js/bootstrap-transition.js"></script> 
+<script src="js/moment.min.js"></script> 
+<script src="js/bootstrap-datetimepicker.min.js"></script> 
+<script src="js/grid.locale-en.js"></script> 
+<script src="js/wboss.service.js"></script> 
+<script src="js/require.js"></script> 
+<script src="js/home.js"></script> 
+<script src="js/highcharts/highcharts.js"></script> 
+</body>
+</html>

@@ -1,0 +1,44 @@
+<style type="text/css"> .ui-jqgrid-bdiv {min-height:150px; } </style>
+<form data-for-jqgrid-id="stat_activeuser_stat_province_dataTable" class="search-form" style="margin-bottom: 5px;">
+   	<div class="row">
+   	 	<div class="col-lg-3 col-sm-12 col-xs-12 col-md-3">
+			<div class='input-group date'>
+				<input type='text' name="beginDate" class="form-control creatable editable datepicker" data-default-value="now-7d" data-format="YYYY-MM-DD"  />
+				<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+			</div>
+	 	</div>
+	<div  class="col-lg-1 col-sm-12 col-xs-12 col-md-1">
+	<label class="control-label col-lg-2 col-sm-12 col-xs-12 col-md-2" >到</label>
+	</div>
+		<div class="ccol-lg-3 col-sm-12 col-xs-12 col-md-3">
+			<div class='input-group date'>
+				<input type='text' name="endDate" class="form-control creatable editable datepicker" data-default-value="now" data-format="YYYY-MM-DD" />
+				<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+			</div>
+	  </div>
+	  	<div class="col-lg-3 col-sm-12 col-xs-12 col-md-3">
+	  		<div class="pop-win">
+			<div class='input-group'>
+				<input type='text' name="regionName" data-pop-win="productofferregion" class="form-control creatable editable pop-win-contoller" placeholder="地域" />
+				<input type='text' name="regionId" class="hide"/>
+				<input type="text" name="regionLevel" value="10A" class="hide" />
+				<span class="input-group-addon pointer"><span class="glyphicon glyphicon-remove"></span></span> 
+				<span class="input-group-addon pointer"><span class="glyphicon glyphicon-th-list"></span></span>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2">
+		<input type="button" class="btn btn-default btn-search " value="搜索">
+		<input type="button" class="btn btn-default btn-report-export" value="导出">
+	</div>
+    </div>
+</form>
+<label>按省份统计数据</label>
+<table id="stat_activeuser_stat_province_dataTable" class="display" cellspacing="0" width="100%"></table>
+<label>按城市统计数据</label>
+<table id="stat_activeuser_stat_city_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="stat_activeuser_stat_city_jqGridPager"></div>	
+	
+<!--  style>
+.btn-export{display:none;}
+</style>-->

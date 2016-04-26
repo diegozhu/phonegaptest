@@ -1,0 +1,113 @@
+<span class="hide author">李连谊</span>
+<form data-for-jqgrid-id="cfg_access_dataTable" class="col-lg-12 search-form" style="margin-bottom: 5px; padding-left: 0px;">
+		<div class="col-lg-3 col-sm-3 col-md-3">
+			<input type="text" class="form-control" name="accessName" placeholder="授权模板名称">
+		</div>
+		<div class="col-lg-3 col-sm-3 col-md-3">
+			<div class="pop-win">
+				<div class='input-group'>
+                	<input type='text' name="vnoName" data-pop-win="vno" class="form-control  pop-win-contoller" placeholder="企业名称"/>
+                	<input type='text' name="vnoId" class="hide"/>
+                	<span class="input-group-addon pointer"><span class="glyphicon glyphicon-remove"></span></span>
+                	<span class="input-group-addon pointer"><span class="glyphicon glyphicon-th-list"></span></span>
+            	</div>
+            </div>
+		</div>
+		<div class="col-lg-2 col-sm-2 col-md-2">
+			<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+		</div>
+		<div class="col-lg-3 col-sm-3 col-md-3">
+			<div class="pop-win" style="width:95px">
+			<div class="input-group">
+				<input type="hidden" name='detailRuleIds'/>
+				<input type="hidden" name='selectAccessId'/>
+      			<button class="btn btn-default bindingandoperate pop-win-contoller pull-right" data-pop-win="access_detail_rule" type="button">绑定和新增</button>
+      		</div>
+      		</div>
+      	</div>
+</form>
+<div class="col-lg-8 col-sm-12 col-md-12">
+	<table id="cfg_access_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="cfg_access_jqGridPager"></div>
+</div>
+<div class="col-lg-4 col-sm-12 col-md-12">
+	<table id="cfg_access_detail_dataTable" class="display" cellspacing="0" width="100%"></table>
+</div>
+<div style="clear: both;"></div>
+<form class="detail_form">
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="accessName" class="col-lg-2 col-sm-3 col-md-2 control-label">授权模板名称</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<input type="text" class="editable creatable form-control" name="accessName" validate="{required:true, uniqueCheck:{url: wboss.getWay + 'com.wboss.wcb.rating.config.AccessCfgSvc', method:'queryAccessTab'}, messages: {required:'请输入授权模板名称', uniqueCheck:'名称已存在,请重输'}}" />
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="effDate" class="col-lg-2 col-sm-3 col-md-2 control-label">生效时间</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<div class='input-group date'>
+				<input type='text' name="effDate" class="form-control creatable editable pointer datepicker" validate="{required:true}"  /> 
+					<span class="input-group-addon"> 
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="expDate" class="col-lg-2 col-sm-3 col-md-2 control-label">失效时间</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<div class='input-group date'>
+				<input type='text' name="expDate" class="form-control creatable editable pointer datepicker" validate="{required:true}"  /> 
+					<span class="input-group-addon"> 
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">状态</label>
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<select data-bind="foreach:DIC_STATUS" disabled name="status" class="status-valid editable pointer form-control status_selector" >
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="vnoName" class="col-lg-2 col-sm-3 col-md-2 control-label">企业名称</label> 
+		<div class=" pop-win col-lg-10 col-sm-9 col-md-10">
+	                <div class='input-group date' >
+	                 <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable pop-win-contoller" validate="{required:true,messages: {required:'请选择运营商'}}" />
+                     <input type='text' name="vnoId" class="hide"/>
+	                    <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-remove"></span>
+	                    </span>
+						<span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-th-list"></span>
+	                    </span>
+	                </div>
+	    </div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="comments" class="col-lg-2 col-sm-3 col-md-2 control-label">授权模板描述</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<textarea cols="22" rows="3" name="comments" class=" creatable editable form-control col-md-4" ></textarea>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+			<input type="hidden"  name="staffId" />
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+			<input type="hidden"  name="accessId" />
+	</div>
+	<div style="clear: both;"></div>
+	<div class="row">
+		<div class="col-sm-4 col-md-3 col-lg-2 fr">
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+			<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+			<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+			<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div>
+	</div>
+</form>
+<style type="text/css">
+	#del a:hover{color:blue;text-decoration:underline}
+</style>

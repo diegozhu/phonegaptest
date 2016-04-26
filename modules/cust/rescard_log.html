@@ -1,0 +1,53 @@
+<span class="hide author">丁明亮</span>
+<form data-for-jqgrid-id="cust_rescard_log_dataTable" class="search-form" >
+	<div class="row">
+		<div class="col-lg-3 col-sm-6 col-xs-12 col-md-3">
+			<input type="text" class="form-control" name="mobilePhone"  placeholder="手机号码" />
+		</div>
+		<div class="col-lg-3 col-sm-6 col-xs-12 col-md-3">
+			<input type="text" class="form-control" name="cardNo"  placeholder="卡号" />
+		</div>
+		<div class="col-lg-3 col-sm-6 col-xs-12 col-md-3">
+	  	        <div class="pop-win">
+	                <div class='input-group'>
+	                 <input type='text' name="vnoName"  data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商" />
+                     <input type='text' name="vnoId" class="hide"/>
+                      <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-remove"></span>
+	                    </span>
+	                    <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-th-list"></span>
+	                    </span>
+	                </div>
+	    		</div>
+	   </div>
+	   <div class="col-lg-3 col-sm-6 col-xs-12 col-md-3">
+			<select class="form-control btn-search" name="status" data-bind="foreach:DIC_CARDLOG_TYPE_NEW">
+			<option class="form-control" value="" data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	<div class="col-lg-6 col-sm-12 col-xs-12 col-md-6">
+        <div class="input-group date">
+            <input type='text' name="beginDate" class="form-control datepicker"data-default-value="now-9d" data-format="YYYY-MM-DD" />
+            <span class="input-group-addon input-group-addon-middle "><span class="glyphicon glyphicon-calendar"></span></span>
+           <input type='text' name="endDate" class="form-control datepicker"data-default-value="now" data-format="YYYY-MM-DD" />
+        </div>
+    </div>
+	   
+	   <div class="col-lg-6 col-sm-12 col-xs-12 col-md-6">
+		    <div class="pull-right">
+				<button class="btn btn-default btn-search" type="button">搜索</button>
+		    </div>
+	   </div>
+	</div>
+</form>
+<table id="cust_rescard_log_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="cust_rescard_log_jqGridPager"></div>
+	
+
+<!-- 表格出现水平滚动条 -->
+<style>
+.ui-jqgrid-bdiv {
+	overflow: auto !important;
+}
+</style>

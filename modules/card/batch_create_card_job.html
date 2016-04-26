@@ -1,0 +1,120 @@
+﻿<span class="hide author">朱海龙</span>
+<form class="detail_form">
+    <label class="label-control col-lg-12 col-sm-12 col-md-12">卡号组合信息:</label>     
+	<div class="col-lg-6 col-sm-12 col-md-12">
+		<label for="cardNumType"
+			class="col-lg-3 col-sm-3 col-md-2 control-label">卡号组合</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+		     <div class='input-group'>
+		         <select name="cardNumType" class="status-valid  editable pointer form-control status_selector" data-bind="foreach:DIC_CARD_NUM_PWD_TYPE">
+					   <option class='form-control'  data-bind="value:v,text:n"></option>
+	             </select>
+	             <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+	         </div> 
+		</div>
+	</div>
+  
+<div class="col-lg-6 col-sm-12 col-md-12 ">
+	<label for="firstNum" class="col-lg-3 col-sm-3 col-md-2 control-label">打头内容</label>
+	<div class="col-lg-9 col-sm-9 col-md-10">
+               <div class='input-group'>
+                  <input type="text" class="form-control editable creatable" name="firstNum" validate="{required:true,messages: {required:'请输入内容'}}" />
+		    <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+		 </div>
+	</div>
+</div>
+
+<div class="col-lg-6 col-sm-12 col-md-12 ">
+	<label for="cardLength" class="col-lg-3 col-sm-3 col-md-2 control-label">卡号长度</label>
+	<div class="col-lg-9 col-sm-9 col-md-10">
+              <div class='input-group'>
+                  <input type="text" class="form-control editable creatable" name="cardLength" validate="{required:true,isNumber10:true,messages: {required:'请输入内容',isNumber10:'卡号长度必须为10~30的正整数'}}" />
+                  <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+	    </div>
+	</div>
+</div>
+
+<div class="col-lg-6 col-sm-12 col-md-12 ">
+	<label for="dealer" class="col-lg-3 col-sm-3 col-md-2 control-label">代理商名称</label>
+	<div class="col-lg-9 col-sm-9 col-md-10">
+              <div class='input-group'>
+                  <input type="text" class="form-control editable creatable" name="dealer"	 validate="{required:true,messages: {required:'请输入内容'}}" />
+                  <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+	    </div>
+    </div>
+</div>
+<div class="col-lg-12 col-sm-12 col-md-12">
+<label class="label-control">密码组合信息：</label> 	
+</div>
+	    <div class="col-lg-6 col-sm-12 col-md-12 ">
+			<label for="pwdType" class="col-lg-3 col-sm-3 col-md-2 control-label">密码组合</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+				 <div class='input-group'>
+				    <select name="pwdType" class="status-valid  editable pointer form-control status_selector" data-bind="foreach:DIC_CARD_NUM_PWD_TYPE">
+					   <option class='form-control'  data-bind="value:v,text:n"></option>
+				    </select>
+                    <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+			     </div>
+			 </div>
+		</div>
+		
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+			<label for="pwdLength" class="col-lg-3 col-sm-3 col-md-2 control-label">密码长度</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+                <div class='input-group'>
+                    <input type="text" class="form-control editable creatable" name="pwdLength" validate="{required:true,isNumber12:true,messages: {required:'请输入内容',isNumber12:'密码长度必须为3~8的正整数'}}" />
+                    <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+			     </div>
+			</div>
+		</div>
+		
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+			<label for="cardCount" class="col-lg-3 col-sm-3 col-md-2 control-label">卡号密码生成数</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+                 <div class='input-group'>
+                    <input type="text" class="form-control editable creatable" name="cardCount"	 validate="{required:true,isNumber13:true,messages: {required:'请输入内容',isNumber13:'该生成数必须为1~10000的正整数'}}" />
+                    <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+			     </div>
+			</div>
+		</div>
+		
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+			<label for="faceValue" class="col-lg-3 col-sm-3 col-md-2 control-label">每张面值金额</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+			     <div class='input-group'>
+                    <input type="text" class="form-control editable creatable" name="faceValue"	validate="{required:true,isNumber14:true,messages: {required:'请输入内容',isNumber14:'金额必须为10~100的正整数'}}" />
+                    <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+			     </div>
+			</div>
+		</div>
+		
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+			<label for="useMonth" class="col-lg-3 col-sm-3 col-md-2 control-label">使用月份</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+                <div class='input-group'>
+                    <input type="text" class="form-control editable creatable" name="useMonth" validate="{required:true,isNumber15:true,messages: {required:'请输入内容',isNumber15:'使用月份必须为1~24的正整数',}}" />
+                    <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+			     </div>
+            </div>
+		</div>
+    <div class="col-lg-6 col-sm-12 col-md-12 " style="display:none;">
+	   <label for="staffId" class="col-lg-3 col-sm-3 col-md-2 control-label">负责人</label>
+	       <div class="col-lg-9 col-sm-9 col-md-10">
+              <div class='input-group'>
+                  <input type="text" class="form-control editable creatable" name="staffId"	 validate="{required:true,messages: {required:'请输入内容'}}" />
+                  <span class="input-group-addon pointer"><span class="glyphicon glyphicon-star"></span></span>
+	       </div>
+	   </div>
+</div>
+  <div class="row"> 
+    <div class="col-sm-8 col-md-3 col-lg-4 pull-right"> 
+ 		<button type="button" class="btn btn-default">提交</button>
+    </div> 
+    </div>
+</form>
+
+
+
+
+
+

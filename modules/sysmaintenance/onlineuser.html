@@ -1,0 +1,63 @@
+<span class="hide author">李连谊</span>
+<form data-for-jqgrid-id="sysmaintenance_onlineuser_dataTable" class="row search-form">
+	    		<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	      			<input type="text" class="form-control" name="custCode" placeholder="客户编码"  />
+	    		</div>
+	    		<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	      			<input type="text" class="form-control" name="apMac" id="sysmaintenance_onlineuser_apMac" placeholder="AP MAC"  />
+	    		</div>
+	    		<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	      			<select data-bind="foreach:DIC_CUST_STATUS" class="form-control status" name="status">
+	      				<option class='form-control' data-bind="value:v,text:n"></option>
+		  			</select>
+				</div>
+				<div class="ol-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	      			<input type="text" class="form-control" name="ssid" placeholder="SSID"  />
+	    		</div>
+	    		<div class="ol-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	      			<input type="text" class="form-control" name="staIp" placeholder="用户IP"  />
+	    		</div>
+				<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 checkbox" style="height:34px">
+				</div>
+				<div class="ol-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	      			<input type="text" class="form-control user_ap_apMac" name="staMac" placeholder="MAC地址"  />
+	    		</div>
+	    		<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	    			<div class="input-group ">
+	      				<input type='text' name="onlineDate" id="sysmaintenance_onlineuser_onlineDate" class="form-control creatable datepicker onlineDate"  data-format="YYYY-MM-DD HH:mm:ss" disabled="disabled"/>
+	    				<span class="input-group-addon">
+	                    		<span class="glyphicon glyphicon-calendar"></span>
+	            		</span>
+	            	</div>
+	    		</div>
+	    		<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+	    			<div class="input-group ">
+	      				<input type='text' name="offlineDate" id="sysmaintenance_onlineuser_offlineDate" class="form-control creatable datepicker offlineDate"  disabled="disabled"/>
+	    				<span class="input-group-addon">
+	                    		<span class="glyphicon glyphicon-calendar"></span>
+	            		</span>
+	            	</div>
+	    		</div>
+				<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 pl0">
+					<div class="pop-win">
+	                	<div class='input-group'>
+	                 	<input type='text' name="vnoName"  data-pop-win="vno" class="form-control pop-win-contoller" placeholder="企业名称" />
+                     	<input type='text' name="vnoId" class="hide"/>
+                      		<span class="input-group-addon pointer">
+	                        	<span class="glyphicon glyphicon-remove"></span>
+	                    	</span>
+	                    	<span class="input-group-addon pointer">
+	                        	<span class="glyphicon glyphicon-th-list"></span>
+	                    	</span>
+	                	</div>
+	    			</div>
+				</div>
+				<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 checkbox" style="height:34px">
+		  		</div>
+	 	  		<div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 pull-right">
+			      	<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+		 	    </div>
+</form>
+
+	<table id="sysmaintenance_onlineuser_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="sysmaintenance_onlineuser_jqGridPager"></div>

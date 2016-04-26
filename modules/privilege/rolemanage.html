@@ -1,0 +1,58 @@
+<span class="hide author">熊国富</span>
+<form data-for-jqgrid-id="privilege_rolemanage_dataTable" class="row search-form" style="margin-bottom:5px;">
+    <div class="col-lg-3 col-sm-12 col-xs-12 col-md-4">
+        <div class="input-group">
+            <input type="text" class="form-control" name="roleName" placeholder="角色名称">
+            <span class="input-group-btn"><button class="btn btn-default btn-search" type="button">搜索</button></span>
+        </div> 
+    </div> 
+</form>
+<div class="row">
+    <div class="col-lg-8 col-sm-12 col-md-12">
+	   <table id="privilege_rolemanage_dataTable" class="display" cellspacing="0" width="100%"></table>
+	   <div id="privilege_rolemanage_jqGridPager"></div>
+    </div>
+    <div class="col-lg-4 col-sm-12 col-md-12">
+	   <table id="privilege_dataTable" class="display" cellspacing="0" width="100%"></table>
+    </div>
+</div>
+<div style="clear:both;"></div>
+<form class="detail_form">
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="roleName" class="col-lg-3 col-sm-3 col-md-2 control-label">角色名称</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable" name="roleName" validate="{required:true, uniqueCheck: {url: wboss.getWay + 'com.wboss.general.staff.RoleSvc', method: 'queryRole'}}"  /> 
+			<input type="hidden" name="roleId" /> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">状态</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<select disabled name="status" class="status-valid editable pointer form-control status_selector" ></select>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="vnoShowFlag" class="col-lg-3 col-sm-3 col-md-2 control-label">展示企业名称</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			 <select disabled name="vnoShowFlag" class="status-valid editable creatable pointer form-control status_selector" >
+			 	<option class='form-control' value='T'>展示</option>
+			 	<option class='form-control' value='F'>不展示</option>
+			 </select>
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="loginPage" class="col-lg-2 col-sm-3 col-md-2 control-label">登录页面</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable" name="loginPage"  /> 
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr"> 
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>

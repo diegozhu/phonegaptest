@@ -1,0 +1,176 @@
+<span class="hide author">丁明亮</span>
+<form data-for-jqgrid-id="ems_ap_dataTable" class="search-form" style="margin-bottom:5px;">
+	<div class="row">
+		<div class="col-lg-3 col-sm-6 col-xs-12 col-md-3">
+	    	<input type="text" class="form-control" name="apName" placeholder="AP名称"/>
+		</div>
+	 	<div class="col-lg-3 col-sm-6 col-xs-12 col-md-3">
+	     	<input type="text" class="form-control ems_ap_apMac"  name="apMac" placeholder="路由MAC"/>
+	 	</div> 
+
+	 	<div class="col-lg-4 col-sm-6 col-xs-12 col-md-3  pop-win">
+              <div class="input-group">
+                  <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商"/>
+                  <input type='text' name="vnoId" class="hide"/>
+                  <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-remove"></span>
+                  </span>
+                  <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-th-list"></span>
+                  </span>
+              </div>
+     	</div>
+	    <div class="col-lg-2 col-sm-6 col-xs-12 col-md-2 ">
+				<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+		</div>
+		<div class="col-lg-8 col-sm-6 col-xs-12 col-md-8">
+		 <div class="pop-win">
+	        <div class='input-group'>
+	             <input type='text' name="filename"  data-pop-win="upload" class="form-control creatable pop-win-contoller" placeholder="" />
+	             <input type='text' name="filetype" value='file' class="hide"/>
+	             <input type='text' name="shortpath" value='true' class="hide"/>
+	             <span class="input-group-addon pointer"><span class="fa fa-fw fa-cloud-upload"></span></span>
+	        </div>
+	    </div>
+	    </div>
+	     <div class="col-lg-3 col-sm-6 col-xs-12 col-md-3 pull-right"> 
+            <button type="button" class="btn btn-default btn_import pull-right">提交</button>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-xs-12 col-md-3 pull-right">
+            <a class="btn btn-default pull-right" href="template/批量添加AP模板.xlsx" style="height: 34px;">模板下载</a>
+       </div> 
+	 </div>
+	 
+	   
+</form>
+<table id="ems_ap_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="ems_ap_jqGridPager"></div>
+	
+<form class="detail_form">
+	<input type="hidden" name="apId">
+	<input type="hidden" name="accObjId" class="form-control">
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="apName" class="col-lg-2 col-sm-3 col-md-2 control-label">路由名称</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable" name="apName" validate="{required:true,uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.auth.authmgr.ApSvc', method: 'queryAp'}}"  /> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="apMac" class="col-lg-2 col-sm-3 col-md-2 control-label">MAC地址</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<input type="text"  class="form-control editable creatable  ems_ap_apMac" name="apMac" validate="{macv6:true,required:true,messages:{}}"  /> 
+		</div> 
+	</div>
+	
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="apType" class="col-lg-2 col-sm-3 col-md-2 control-label">AP类型</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<!--  select disabled name="apType"
+				class="status-valid editable creatable pointer form-control status_selector"></select>-->
+				<input type="text" class="form-control editable creatable form-control" name="apType" maxlength="3"   /> 
+		</div> 
+	</div> 
+	
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">状态</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<select disabled name="status"class="form-control status-valid editable pointer  status_selector" data-bind="foreach:DIC_STATUS">
+			<option class="form-control"  data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12  popwin_vno">
+	<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">SSID名称</label>
+		
+              <div class=" pop-win  col-lg-10 col-sm-9 col-md-10">
+              <div class="input-group date">
+                  <input type='text' name="ssid" data-pop-win="ssid" class="form-control creatable editable pop-win-contoller" placeholder="SSID名称" />
+                  <input type='text' name="ssidId" class="hide"/>
+                  <span class="input-group-addon pointer">
+                    <span class="glyphicon glyphicon-remove"></span>
+                	</span>
+                  <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-th-list"></span>
+                  </span>
+              </div>
+   		     </div>
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12  popwin_vno">
+	<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">企业名称</label>
+		
+              <div class=" pop-win col-lg-10 col-sm-9 col-md-10" >
+              <div class="input-group date">
+                  <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商" validate="{required:true,messages:{required:'运营商不能为空'}}" />
+                  <input type='text' name="vnoId" class="hide"/>
+                  <span class="input-group-addon pointer">
+                    <span class="glyphicon glyphicon-remove"></span>
+                	</span>
+                  <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-th-list"></span>
+                  </span>
+              </div>
+   		     </div>
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12  ">
+	<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">访问策略</label>
+              <div class=" pop-win col-lg-10 col-sm-9 col-md-10">
+              <div class="input-group date">
+                  <input type='text' name="policyName" data-pop-win="protal_acc_policy" class="form-control creatable editable pop-win-contoller" placeholder="访问策略" />
+                  <input type='text' name="portalAccPolicyId" class="hide"/>
+                  <span class="input-group-addon pointer">
+                    <span class="glyphicon glyphicon-remove"></span>
+                	</span>
+                  <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-th-list"></span>
+                  </span>
+              </div>
+   		     </div>
+	</div>
+	 <div class="col-lg-6 col-sm-12 col-md-12  ">
+	  <label for="custTemplateName" class="col-lg-2 col-sm-3 col-md-2 control-label">开户模版</label> 
+	  	<div class="pop-win col-lg-10 col-sm-9 col-md-10">
+	                <div class='input-group date'>
+	               <input type='text' name="custTemplateName"  data-pop-win="fast_template" class="form-control creatable editable pop-win-contoller"  placeholder="开户模板" />
+                     <input type='text' name="custTemplateId" class="hide"/>
+                     <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-remove"></span>
+	                    </span>
+	                    <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-th-list"></span>
+	                    </span>
+	                </div>
+	    		</div>
+	  </div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="apDesc"
+			class="col-lg-2 col-sm-3 col-md-2 control-label">路由描述</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<textarea cols="22" rows="3" name="apDesc"
+				class="form-control editable creatable form-control col-md-4" ></textarea>
+		</div>
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 " hidden="true">
+		<label for="addr"
+			class="col-lg-2 col-sm-3 col-md-2 control-label">地理位置</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<textarea cols="22" rows="3" name="addr"
+				class="form-control editable  creatable form-control col-md-4" ></textarea>
+		</div>
+	</div>
+	
+	   
+	   <div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr"> 
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>

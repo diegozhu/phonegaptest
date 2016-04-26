@@ -1,0 +1,53 @@
+<span class="hide author">李连谊</span>
+<form data-for-jqgrid-id="ap_stat_dataTable" class="row search-form" style="margin-bottom:5px;">
+ <div class="col-lg-12 col-sm-12 col-md-12 my-search-group pl0">
+ 
+	<div class="col-lg-2 col-sm-2 col-md-2">
+		<select class="form-control statByUnitTime" name="statByUnitTime">
+	      	<option value="true" selected="selected">按日查询</option>
+	      	<option value="false">按月查询</option>
+		</select>
+	</div>
+
+	<div class="col-lg-2 col-sm-2 col-md-2">
+		<div class='input-group date'>
+			<input type='text' name="date" class="form-control creatable datepicker" data-format="YYYY-MM-DD"/>
+			<span class="input-group-addon"> 
+				<span class="glyphicon glyphicon-calendar"></span>
+			</span>
+		</div >
+		<div class='input-group date' style="display:none">
+			<input type='text' name="endDate" class="form-control creatable datepicker"/>
+			<span class="input-group-addon"> 
+				<span class="glyphicon glyphicon-calendar"></span>
+			</span>
+		</div>
+	</div>
+
+	<div class=" col-lg-3 col-sm-3 col-md-3">
+		<div class="pop-win">
+			<div class="input-group">
+				<input type='text' name="vnoName" data-pop-win="vno" class="form-control  pop-win-contoller" placeholder="虚拟运营商" /> 
+				<input type='text' name="vnoId" class="hide" />
+				<span class="input-group-addon pointer">
+					<span class="glyphicon glyphicon-remove"></span>
+				</span> 
+				<span class="input-group-addon pointer"> 
+					<span class="glyphicon glyphicon-th-list"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-3 col-sm-3 col-md-3">
+		<input type="checkbox"  name="isBySubVno" checked="checked" style="margin-top:11px;"/><label>VNO子查询</label>
+	</div>
+	
+	<div class="col-lg-2 col-sm-2 col-md-2">
+		<input type="button" class="btn btn-default btn-query pull-right" value="搜索">
+	</div>
+ </div>
+</form>
+
+<table id="ap_stat_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="ap_stat_jqGridPager"></div>

@@ -1,0 +1,166 @@
+<span class="hide author">李雪缔</span>
+<div class="col-lg-6">
+	<table id="ad_position_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="ad_position_jqGridPager"></div>
+</div>
+<!-- 右表 -->
+<div class="col-lg-6">
+	<div style="margin-top: 38px;">
+		<table id="ad_instance_dataTable" class="display" cellspacing="0" width="100%"></table>
+		<div id="ad_instance_jqGridPager"></div>
+	</div>
+</div>
+
+<div class="col-lg-12">
+<form class=" row detail_content_form" 
+	style="width: 100%; margin:5px 0px; padding: 10px; border: #999 1px solid; border-radius: 10px;">
+	<input type="hidden" name="adPositionId" value="" style="display:none;">
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="adName" class="col-lg-3 col-sm-3 col-md-2 control-label">广告名称</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+	<input type="text" name="adName" validate="{required:true,messages: {required:'请输入内容'}}"
+				class="editable creatable pointer form-control"  />
+		</div>
+	</div> 
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="policyNames" class="col-lg-3 col-sm-3 col-md-2 control-label">广告推送获取策略</label>
+		<div class=" pop-win col-lg-9 col-sm-9 col-md-10">
+			<div class='input-group date'>
+				<input type='text' name="policyNames" data-pop-win="ad_policy"
+					class="form-control creatable editable  pop-win-contoller"
+					validate="{required:true,messages: {required:'请选择内容'}}"  />
+				<input type='text' name="getPolicyIds" class="hide" /> <span
+					class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-remove"></span>
+				</span> <span class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-th-list"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="adSvcType" class="col-lg-3 col-sm-3 col-md-2 control-label">广告服务类型</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<select  name="adSvcType" class=" editable creatable pointer form-control status_selector" data-bind="foreach:AD_SVC_TYPE">
+				<option class="form-control" data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div> 
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="adType" class="col-lg-3 col-sm-3 col-md-2 control-label">广告类型</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<select  name="adType" class=" pointer form-control status_selector" data-bind="foreach:DIC_AD_TYPE">
+				<option class="form-control" data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12  adLink" style="display:none;">
+		     <label for="adLink" class="col-lg-3 col-sm-3 col-md-2 control-label">广告链接</label> 
+		     <div class="col-lg-9 col-sm-9 col-md-10">
+				<input type="text" name="adLink"   validate="{url2:true,messages: {url2:'请输入正确的链接'}}"
+				class="editable creatable pointer form-control"  />
+			</div>
+	</div> 
+	<div class="col-lg-6 col-sm-12 col-md-12 " style="display:none;">
+		<label for="adDesc" class="col-lg-3 col-sm-3 col-md-2 control-label">广告描述</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<textarea cols="22" rows="3" name="adDesc" class="form-control editable creatable form-control col-md-4" ></textarea>
+		</div>
+	</div> 
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-3 col-sm-3 col-md-2 control-label">状态</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+		<select  name="status" class=" editable pointer form-control status_selector" data-bind="foreach:DIC_AD_STATUS">
+				<option class="form-control" data-bind="value:v,text:n"></option>
+		</select>
+		</div>
+	</div>
+	
+	 <div class="col-lg-6 col-sm-12 col-md-12 " style="display:none;">
+		<label for="adInfo" class="col-lg-3 col-sm-3 col-md-2 control-label">广告信息</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<textarea cols="22" rows="3" name="adInfo"class="form-control editable creatable form-control col-md-4" ></textarea>
+		</div>
+	</div> 
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="imgShowType" class="col-lg-3 col-sm-3 col-md-2 control-label">图片展示类型</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<select  name="imgShowType" class=" editable creatable pointer form-control status_selector" data-bind="foreach:DIC_IMG_SHOW_TYPE">
+				<option class="form-control" data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="showScene" class="col-lg-3 col-sm-3 col-md-2 control-label">展示场景</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<select disabled name="showScene"class=" editable creatable pointer form-control status_selector" data-bind="foreach:DIC_AD_SHOWSCENE">
+				<option class="form-control" data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="vnoName" class="col-lg-3 col-sm-3 col-md-2 control-label">企业名称</label>
+		<div class=" pop-win col-lg-9 col-sm-9 col-md-10">
+			<div class='input-group date'>
+				<input type='text' name="vnoName" data-pop-win="vno"
+					class="form-control creatable  pop-win-contoller"
+					validate="{required:true,messages: {required:'请选择内容'}}"  />
+				<input type='text' name="vnoId" class="hide" /> <span
+					class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-remove"></span>
+				</span> <span class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-th-list"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+	 
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="vnoName" class="col-lg-3 col-sm-3 col-md-2 control-label">广告发布商</label>
+		<div class=" pop-win col-lg-9 col-sm-9 col-md-10">
+			<div class='input-group date'>
+				<input type='text' name="vnoNames" data-pop-win="vno_ad_issue_instance" validate="{required:true,messages: {required:'请选择内容'}}" 
+					class="form-control creatable editable pop-win-contoller"  />
+				<input type='text' name="issueInstanceId" class="hide" /> 
+				<input type="text" name="adInstanceId" class="hide">
+				<input type="text" name="temp" class="hide">
+				<span
+					class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-remove"></span>
+				</span> <span class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-th-list"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="col-lg-12 col-sm-12 col-md-12  adContent" style="display:none;">
+	<label for="adContent" class="col-lg-1 col-sm-4 col-md-2 control-label">广告文字</label>
+	<div class="col-lg-11 col-sm-8 col-md-10" id="com_state_test">
+		<textarea name="adContent" class="form-control editable creatable form-control ckeditor" rows="2" cols="3" ></textarea>
+	</div>
+	</div>
+	
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-8 col-md-6 col-lg-2 fr"> 
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>
+</div>
+
+<style type="text/css">
+	.modal-dialog{
+		width:75%;
+	}
+	#gbox_ad_instance_dataTable{
+	margin-top:-35px;
+	}
+</style>

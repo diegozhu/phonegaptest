@@ -1,0 +1,36 @@
+<div class="popwin_vno" style="min-height: 400px;">
+	<div class='col-lg-12 col-sm-12 col-md-12' >
+		<form name='uploadForm' method="post" id="uploadForm" target='frameFile' enctype="multipart/form-data" class="detail_form">
+			<div class="col-lg-12 col-sm-12 col-md-12 ">
+				<div class="col-lg-2 col-sm-3 col-md-3">
+					<button type="button" class="btn btn-default btn_upload">上传</button>
+				</div>
+				<div class="col-lg-10 col-sm-9 col-md-10">
+					<input type="file" name="uploadImg" class='upload_img form-control' style="max-width: 200px;"/>
+					<label class='upload_img_tips'></label>
+				</div>
+				<div class="col-lg-2 col-sm-3 col-md-3 video" style="margin-top: 10px;">
+					<label style="height: 34px; line-height: 34px;">视频封面：</label>
+				</div>
+				<div class="col-lg-10 col-sm-9 col-md-10 video" style="margin-top: 10px;">
+					<input type="file" name="videoImg" class='upload_video_img form-control' style="max-width: 200px;"/>
+					<label class='upload_video_img_tips'></label>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</form>
+		<iframe id='frameFile' name='frameFile' class='hide'></iframe>
+	</div>
+	<div class='col-lg-12 col-sm-12 col-md-12' >
+		<form name='detailForm' method="post" id="detailForm" class="detail_form view_file_form" style="height: 300px; overflow-y:auto; ">
+			
+		</form>
+	</div>
+</div>
+<style>
+	.file_content{margin-top: 10px;border: 1px solid #999; border-radius: 5px 5px 5px 5px; position: relative;}
+	.hd{display: none;}
+	.close_icon{top: 0px; right: 0px; position: absolute;cursor: pointer;}
+	.video_item{padding-top: 10px;  padding-left: 10px}
+	.video_list{height: 120px;}
+</style>

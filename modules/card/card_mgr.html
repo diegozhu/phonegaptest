@@ -1,0 +1,69 @@
+﻿<span class="hide author">朱海龙</span>
+<div id="card_card_mgr_wrap">
+<form data-for-jqgrid-id="card__card_mgr_dataTable" class="row search-form" >
+	<div class="row">
+           <div class="col-lg-3 col-sm-12 col-md-12 ">
+	    	    <label for="preCardNo" class="col-lg-3 col-sm-3 col-md-2 control-label"><input type="radio" name="queryType1" value="1"/>开始卡号</label>
+	      	 	<div class="col-lg-9 col-sm-9 col-md-10">
+	      	 	     <input type="text" class="form-control" name="preCardNo" placeholder=""/>
+	      	 	</div>
+	        </div>
+	        <div class="col-lg-3 col-sm-12 col-md-12 ">
+	             <label for="sufCardNo" class="col-lg-3 col-sm-3 col-md-2 control-label">结束卡号</label>
+	             <div class="col-lg-9 col-sm-9 col-md-10">
+	                  <input type="text" class="form-control" name="sufCardNo" placeholder=""/>     
+	             </div>
+			</div>
+		    <div class="col-lg-3 col-sm-12 col-md-12 ">
+	             <label for="cardNo" class="col-lg-3 col-sm-3 col-md-2 control-label"><input type="radio"   id="card_mgr_queryType2" name="queryType1" value="2" checked/>&nbsp;卡号</label>
+	             <div class="col-lg-9 col-sm-9 col-md-10">
+	                  <input type="text" class="form-control" name="cardNo" placeholder=""/>     
+	             </div>
+			</div>
+    </div>
+		     
+		<div class="row">
+		      <div class="col-lg-3 col-sm-12 col-md-12 ">
+	              <label for="status" class="col-lg-3 col-sm-3 col-md-2 control-label ">状态</label>
+				  <div class="col-lg-9 col-sm-9 col-md-10 pl0">
+					    <select  class="form-control btn-search"  name="status"  id="card_card_mgr_selectStatus" data-bind="foreach:DIC_CARD_STATUS">
+                           <option class='form-control'  data-bind="value:v,text:n"></option>
+					    </select>
+				  </div>
+		      </div>
+				
+			    <div class="col-lg-3 col-sm-12 col-md-12 ">
+	             <label for="dealer" class="col-lg-3 col-sm-3 col-md-2 control-label">卡密代理商</label>
+	             <div class="col-lg-9 col-sm-9 col-md-10 pl0">
+                       <input type="text" class="form-control" name="dealer"  id="card_mgr_dealer" placeholder=""/> 
+                  </div>
+	             </div>
+		
+			
+			  <div class="col-lg-3 col-sm-12 col-md-12  ">
+				<button class="btn btn-default btn-search pull-right " name="queryCardInfos" type="button" >查询</button>
+		      </div>
+	 </div>
+</form>
+
+
+<table id="card__card_mgr_dataTable" class="display" cellspacing="0"  width="100%"></table>
+<div id="card_card_mgr_jqGridPager"></div>
+</div>
+
+<div class="text-center">
+   <button class="btn btn-default btn-search"  name="cardLock" type="button">锁定</button>
+   <button class="btn btn-default btn-search"  name="cardUnlock" type="button">解锁</button>
+   <button class="btn btn-default btn-search"  name="batchCardLock" type="button">按号段锁定</button>
+   <button class="btn btn-default btn-search"  name="batchCardUnlock" type="button">按号段解锁</button>
+</div>
+
+
+
+
+
+
+
+
+
+

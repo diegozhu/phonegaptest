@@ -1,0 +1,129 @@
+<span class="hide author">丁明亮</span>
+<form data-for-jqgrid-id="cfg_sysparam_dataTable" class="row search-form" style="margin-bottom:5px;">
+	<div class="my-search-group">
+	    	<div class="col-lg-3 col-sm-3 col-md-3">
+	      	 	<input type="text" class="form-control" name="paramCode" placeholder="参数编码"/>
+	        </div>
+	        <div class="col-lg-3 col-sm-3 col-md-3">
+			    <select  class="form-control btn-search"  name="paramTypeCode" >
+			      <option value="RAD_SERV">RADIUS服务器参数</option>
+			      <option value="POR_ACC">Portal服务器参数</option>
+			      <option value="POR_SERV">Portal认证参数</option>
+			      <option value="SMS_CFG">短信服务参数</option>
+			      <option value="POR_MAL">邮件服务参数</option>
+			      <option value="POR_FTP">文件上传服务参数</option>
+			      <option value="IKUAI_CFG">爱快路由器相关配置参数</option>
+			    </select>
+			</div>
+			<div class=" col-lg-3 col-sm-3 col-md-3 pop-win">
+              <div class="input-group">
+                  <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商"/>
+                  <input type='text' name="vnoId" class="hide"/>
+                  <span class="input-group-addon pointer">
+                    <span class="glyphicon glyphicon-remove"></span>
+                	</span>
+                  <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-th-list"></span>
+                  </span>
+              </div>
+     </div>
+			<div class="col-lg-3 col-sm-3 col-md-3">
+				<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+		</div>
+	    
+	 </div>
+</form>
+
+<table id="cfg_sysparam_dataTable" class="display" cellspacing="0"
+	width="100%"></table>
+<div id="cfg_sysparam_jqGridPager"></div>
+<form class="detail_form"
+	style="width: 100%; margin: 5px; padding: 10px; border: #999 1px solid; border-radius: 10px;">
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="paramCode"
+			class="col-lg-2 col-sm-3 col-md-2 control-label">参数编码</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<input type="text" class="form-control" name="paramCode" />
+		</div>
+	</div>
+
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="paramName"
+			class="col-lg-2 col-sm-3 col-md-2 control-label">参数名称</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<input type="text" class="form-control  creatable" name="paramName" />
+		</div>
+	</div>
+
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">状态</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<select disabled data-bind='foreach:DIC_STATUS' name="status" class="status-valid editable pointer form-control status_selector">
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="paramValue" class="col-lg-2 col-sm-3 col-md-2 control-label">参数值</label>
+		<div class="col-lg-10 col-sm-9 col-md-10" class="paramValue">
+			<select disabled data-value-type="C01" data-value-name="paramValue" class="status-valid editable pointer form-control status_selector" style="display: none;">
+			<option value="T">启用</option>
+			<option value="F">禁用</option>
+			</select>
+			<input  data-value-type="A01"  data-value-name="paramValue"  type="nubmer"  class="status-valid creatable editable pointer form-control status_selector" validate="{required:true,messages: {required:'请输入内容'}}" style="display: none;"></input>
+			<input  data-value-type="B01"  data-value-name="paramValue"  type="string" class="status-valid creatable editable pointer form-control status_selector" validate="{required:true,messages: {required:'请输入内容'}}"></input>
+			<div class='input-group date' data-value-type="D01"  data-value-name="paramValue" style="display: none;">
+	                <input type='text' class="form-control creatable editable datepicker"  validate="{required:true,messages: {required:'请输入内容'}}"/>
+	                <span class="input-group-addon">
+	                    <span class="glyphicon glyphicon-calendar"></span>
+	                </span>
+	        </div>
+	        <div class='input-group date' data-value-type="D02"  data-value-name="paramValue" style="display: none;">
+	                <input type='text' class="form-control creatable editable datepicker" validate="{required:true,messages: {required:'请输入内容'}}" />
+	                <span class="input-group-addon">
+	                    <span class="glyphicon glyphicon-calendar"></span>
+	                </span>
+	        </div>
+	        <div class='input-group date' data-value-type="D03"  data-value-name="paramValue" style="display: none;">
+	                <input type='text' class="form-control creatable editable datepicker" validate="{required:true,messages: {required:'请输入内容'}}" />
+	                <span class="input-group-addon">
+	                    <span class="glyphicon glyphicon-calendar"></span>
+	                </span>
+	        </div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12  popwin_vno">
+	<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">运营商</label>
+		
+              <div class=" pop-win col-lg-10 col-sm-9 col-md-10" >
+              <div class="input-group date">
+                  <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable  pop-win-contoller" placeholder="虚拟运营商" validate="{required:true,messages:{required:'运营商不能为空'}}" />
+                  <input type='text' name="vnoId" class="hide"/>
+                  <span class="input-group-addon pointer">
+                    <span class="glyphicon glyphicon-remove"></span>
+                	</span>
+                  <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-th-list"></span>
+                  </span>
+              </div>
+   		     </div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 " style="margin-bottom:15px;">
+		<label for="paramDesc"
+			class="col-lg-2 col-sm-3 col-md-2 control-label">参数描述</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<textarea cols="22" rows="3" name="paramDesc"
+				class=" creatable form-control col-md-4" ></textarea>
+		</div>
+	</div>
+
+	<div style="clear: both;"></div>
+	<div class="row">
+		<div class="col-sm-4 col-md-3 col-lg-2 fr">
+			<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+			<button type="button" class="btn btn-default btn-class-ok"style="display: none;">确定</button>
+			<button type="button" class="btn btn-default btn-class-cancel"style="display: none;">取消</button>
+		</div>
+	</div>
+</form>

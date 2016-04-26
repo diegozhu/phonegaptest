@@ -1,0 +1,27 @@
+<style type="text/css"> .ui-jqgrid-bdiv {min-height:150px; } </style>
+<form data-for-jqgrid-id="enterprisetype_report_dataTable" class="row search-form" style="margin-bottom: 5px;">
+	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+		<label for="endTime" class="col-lg-3 col-sm-3 col-md-2 control-label">截至时间</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<div class='input-group'>
+				<input type='text' name="endTime" class="form-control datepicker" data-default-value="now" data-format="YYYY-MM-DD" /> 
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar"></span>
+				</span>
+				<input type="hidden" name='vnoId'/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+		<span>
+			<button class="btn btn-default btn-search" type="button">搜索</button>
+		</span>
+		<span>
+			<button class="btn btn-default btn-report-export" type="button">导出</button>
+		</span>
+	</div>
+</form>
+
+<table id="enterprisetype_dataTable"></table>
+	<div id="enterprisetype_jqGridPager"></div>
