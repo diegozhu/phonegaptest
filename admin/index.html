@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/admin/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>WBOSS DashBoard</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/admin/css/bootstrap-dialog.min.css" rel="stylesheet">
+    <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/css/bootstrap.theme.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/admin/css/index.css" rel="stylesheet">
+ 	<link href="/admin/jqGrid/jquery-ui.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/admin/jqGrid/ui.jqgrid.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/admin/jstree/themes/default/style.min.css" media="screen" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<script>
+if(location.href.indexOf("oldversion") == -1){
+	location.href = "/admin/login.html";
+}
+</script>
+<body class="container-fluid" style="width:100%;height:100%;margin:0;padding:0;overflow:hidden;">
+    <div id="loginPage" style="position:fixed">
+        <div class="row" style="color: white;margin-top: 50px;margin-bottom: 50px;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><h1>WBOSS 管理台</h1></div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="login-form row" ng-show="!isLogin">
+            <div class="col-md-4"></div>
+            <div class="login-content col-md-4">
+                <div class="form-group" class="">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user" style="width:14px;"></i>
+                        </div>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="用户名" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-key"></i>
+                        </div>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="密码" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="login" class="btn btn-primary btn-block btn-login">
+                        <i class="fa fa-sign-in"></i>
+                        登录 >>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom:0;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:void(0)" onclick="toggleFull()">WBOSS Dashboard</a>
+        </div>
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown" >
+                <a href="javascript:void(0)" class="dropdown-toggle userButton" data-toggle="dropdown">
+                    <i class="fa fa-user"></i> &nbsp;
+                    <span data-bind="text:user().displayedName()"> <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu pop-win">
+                    <li class="input-group" >
+                        <a data-pop-win="reset_password" class='pop-win-contoller' href="javascript:void(0)"><i class="fa fa-fw fa-gear"></i> 修改密码</a>
+                    </li>
+                    <li>
+                        <a  id="logout" href="javascript:void(0)"><i class="fa fa-fw fa-power-off"></i> 登出</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>         
+    </nav>
+    <div class="pointer menu-show" id="splitLine" style="overflow:hidden;width: 15px;float:left;margin:50px 0 0 0;background-color: #333;border-left: #111 1px solid;border-right: #111 1px solid;">
+        <span class="glyphicon glyphicon-menu-right" style="color: #eee;margin-top:300px;"></span>
+        <span class="glyphicon glyphicon-menu-left" style="display:none;color: #eee;margin-top:300px;"></span>
+    </div>
+    <ul class="menuList" id='sideMenu' onselectstart="return false;" style='overflow:auto;margin-top:50px;float:left;width:230px;overflow-x:hidden;'  data-bind="foreach:user().menuList" style="left:240px;">
+        <li>
+            <a data-toggle="collapse" class="menuListItem collapsed pointer" data-bind="attr:{'data-menu-id':menuId,'data-target':'#sub-menu-'+menuId()}" href="javascript:void(0)">
+                <i class="fa fa-fw" data-bind="css:icon"></i>
+                 &nbsp;
+                <span data-bind="text:menuName"></span>
+                <i class="fa fa-fw fa-caret-down" style="display:none" ></i>
+                <i class="fa fa-fw fa-caret-right"></i>
+            </a>                        
+            <ul data-bind="attr:{'id':'sub-menu-'+menuId()},foreach:subMenu" class="collapse">
+                <li class='subMenuListItem'>
+                    <a href="javascript:void(0)" class="subMenuItem" onclick="openTab(this)" data-bind="text:menuName,attr:{'id':'sub-menu-'+menuId(),'data-page-url':url,'data-menu-name':menuName}"></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div style="float:left;min-width:779px;overflow-x:hidden;margin-top:50px;background-color:#eee;color:#222;" id="content">
+        <ul data-bind="foreach:tabs" class="my-nav-tabs">
+            <li class="my-nav-tabs-li" data-bind="attr:{id:id,'data-module':module},css:{'my-nav-tab-select':selected}">
+                <span class="my-nav-tab pointer" data-bind="text:name,click:$parent.tabClick"></span>
+                <span class="my-nav-tab-remove-icon pointer glyphicon glyphicon-remove-circle" data-bind="click:$parent.removeTabClick"></span>
+            </li>
+        </ul>
+        <div id="page-wrapper" style="min-height: 600px;">
+            <div class="container-fluid view-animate-container tab_container" id="tabs"></div>
+            <img id='page-img-bg' style="min-height:600px;background-image: url('img/index.png');height:100%;width:100%;" />
+            <!-- /.container-fluid -->
+        </div>
+    </div>
+    <div class='clear'></div>
+    <nav class="navbar-inverse navbar-brand navbar-fixed-bottom" style="width: 100%;text-align: center;color: #fff;color:#999;font-size:13px;height:30px;line-height:30px;padding:0" role="navigation">
+        <span>
+        		© 2016 <span id="admin_system_info">沃云网络</span> 版权所有<span id="runningtime" style="margin-left:20px;"></span>
+        		<span class="hidden-sm hidden-lg hidden-md">xs</span>
+   	 			<span class="hidden-xs hidden-sm hidden-lg">md</span>
+   	 			<span class="hidden-xs hidden-lg hidden-md">sm</span>
+   	 			<span class="hidden-xs hidden-sm hidden-md">lg</span>
+        </span>
+    </nav>
+    <script src="/common/enhance.js"></script>
+    <script src="/admin/js/md5.js"></script>
+    <script src="/admin/js/jquery.js"></script>
+    <script src="/admin/js/jquery.history.js"></script>
+    <script src="/admin/jqGrid/jquery.jqGrid.min.js"></script>
+    <!-- jquery validate js start -->
+    <script src="/admin/js/validate/jquery.validate.js"></script>
+    <script src="/admin/js/validate/jquery.metadata.js"></script>
+    <script src="/admin/js/validate/additional-methods_zh_CN.js"></script>
+    <script src="/admin/js/validate/jquery-validate.bootstrap-tooltip.js"></script>
+    <!-- jquery validate js end -->
+    <script src="/admin/jstree/jstree.js"></script>
+    <script src="/admin/js/jquery.serializeObject.min.js"></script>
+    <script src="/admin/js/jquery.mac-address-formator.js"></script>
+    <script src="/admin/js/knockout-3.4.0.js"></script>
+    <script src="/admin/js/knockout.mapping-latest.js"></script>
+    <script src="/admin/js/bootstrap.min.js"></script>
+    <script src="/admin/js/bootstrap-dialog.min.js"></script>
+    <script src="/admin/js/bootstrap-collapse.js"></script>
+    <script src="/admin/js/bootstrap-transition.js"></script>
+    <script src="/admin/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="/admin/bootstrap-datetimepicker/moment.min.js"></script>
+    <script src="/admin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="/admin/jqGrid/i18n/grid.locale-en.js"></script>
+    <script src="/admin/js/wboss.service.js"></script>
+    <script src="/admin/js/require.js"></script>
+    <script src="/admin/js/index.js"></script>
+    <script src="/admin/js/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/admin/ckeditor/ckeditor.js"></script>
+</body>
+</html>

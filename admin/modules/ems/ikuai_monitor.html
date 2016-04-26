@@ -1,0 +1,133 @@
+<span class="hide author">丁明亮</span>
+<div class="col-lg-3 col-sm-3 col-md-3">
+	<form class="row search-form vno_search" style="margin-bottom:5px;">
+		<div class="col-lg-8 my-search-group">
+			<input type="text" class="form-control" name="vnoName" placeholder="工厂名称">	
+		</div>
+		<div class="col-lg-4 my-search-group">
+		     <button class="btn btn-default btn-search" type="button">查询</button>     
+		 </div>
+	</form>
+	<div class="org-vno-tree" style="overflow: auto; height:600px;"></div>
+</div>
+
+<div class="col-lg-9 col-sm-9 col-md-9" style="padding:5px;min-height:750px;border-radius: 10px;">
+	<div class="col-lg-12 col-sm-12 col-md-12" style="margin-left:15px;" >
+		<ul  class="nav nav-tabs" style="margin-bottom:10px;">
+		   <li class="active"><a href="#ems_ikuai_monitor" class="ik" data-toggle="tab">爱快路由监控信息</a> </li>
+		   <li><a href="#ems_monitor_alarm" class="al" data-toggle="tab">监控告警信息</a></li>
+		   <li><a href="#ems_ikuai_monitor_online" class="ikonline" data-toggle="tab">在线爱快路由监控信息</a></li>
+		   <li><a href="#ems_ac_info" class="acinfo" data-toggle="tab">爱快路由在线统计</a></li>
+		</ul>
+	</div>
+	<div class="col-lg-12 col-sm-12 col-md-12 alarm_div">
+		<div class="tab-content">
+		  <div class="tab-pane fade in active" id="ems_ikuai_monitor">
+		      <form data-for-jqgrid-id="ems_ikuai_monitor_dataTable" class="ik-form detail-form search-form col-lg-12" style="height: 40px;">
+				  <div class="col-lg-3 col-sm-3 col-md-3">
+				 	<input type="text" class="form-control"  name="gwId" placeholder="网关"/>
+				    <input type="hidden" name="vnoId"/>
+				  </div>
+				  <div class="col-lg-3 col-sm-3 col-md-3">
+				 	<input type="text" class="form-control" name="name" placeholder="设备名称"/>
+				  </div>
+				 <div class="col-lg-3 col-sm-3 col-md-3">
+					<div class='input-group date'>
+						<input type='text' name="createDate" data-default-value="now" class="form-control datepicker" data-format="YYYY-MM-DD" /> 
+						<span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span>
+					</div>
+				 </div>
+				 <div class="col-lg-3 col-sm-3 col-md-3">
+				 	<button class="btn btn-default btn-searchIK"   type="button">搜索</button>
+				 </div>
+			  </form>
+			  <div class="col-lg-12" style="margin-top:10px;height:700px;">
+				  <table id="ems_ikuai_monitor_dataTable" class="display"  cellspacing="0" width="100%"></table>
+				  <div id="ems_ikuai_monitor_jqGridPager"> </div>
+			  </div>
+		  </div>
+		  <div class="tab-pane fade " id="ems_monitor_alarm">
+		  	<form data-for-jqgrid-id="ems_monitor_alarm_dataTable" class="al-form detail-form search-form col-lg-12" style="height: 40px;">
+			   	 <div class="col-lg-2 col-sm-2 col-md-2">
+				 	<input type="text" class="form-control"  name="gwId" placeholder="网关"/>
+				 	<input type="hidden" name="vnoId"/>
+				 </div>
+				 <div class="col-lg-2 col-sm-2 col-md-2">
+				 	<input type="text" class="form-control" name="acName" placeholder="设备名称"/>
+				 </div>
+			   	<div class="col-lg-3 col-sm-3 col-md-3">
+					<div class="input-group date">
+						<input type="text" name="createDate" data-default-value="now" class="form-control datepicker" data-format="YYYY-MM-DD">
+						<span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+				</div>
+		        <div class="col-lg-3 col-sm-2 col-md-2">
+					<select  name="status" class="status-valid  form-control status_selector" style="width:160px;" data-bind="foreach:DIC_ALARMSTATUS_TYPE">
+						<option class="form-control" value="" data-bind="value:v,text:n"></option>	
+					</select>
+				</div>
+			    <div class="col-lg-2 col-sm-2 col-md-2">
+					<button class="btn btn-default btn-searchIM" style="margin-left:10px;" type="button">搜索</button>
+			    </div>
+		    </form>
+		    <!-- 这里面表格，表体和内容不是在同一个表格中.  不要把表格放在form当中，不然pageSize会出问题 -->
+		    <div class="col-lg-12" style="margin-top:10px;height:700px;">
+			   	<table id="ems_monitor_alarm_dataTable"  class="display" ></table>
+				<div id="ems_monitor_alarm_jqGridPager"></div>
+			</div>
+		  </div>
+		  <div class="tab-pane fade " id="ems_ikuai_monitor_online">
+		  	<form data-for-jqgrid-id="ems_ikuai_monitor_online_dataTable" class="on-form  detail-form row search-form col-lg-12" style="height: 40px;">
+		    <input type="hidden" name="vnoId"/>
+	 		 <div class="col-lg-6 col-md-6 col-sm-6 my-search-group fr">
+	 			 
+				<div class="col-lg-1 col-md-1 col-sm-1">
+					<span class="glyphicon glyphicon-refresh btn-refresh pointer" style="margin-top:15px;"></span>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				    <span style="margin-top:12px;float:left;"><span style="font-size:15px;margin-right:10px;">定时刷新</span><input type="checkbox" class="ck-refresh"></span>
+				</div>
+				
+				<div class="col-lg-7 col-md-7 col-sm-7">
+					<span style="margin-top:15px;float:left;">刷新日期:<span class="refreshTime" style="margin-left:10px;"></span></span>
+				</div>
+	 		</div>
+			    <ul class="nav nav-tabs online_monitor" style="margin-left:8px;">
+			    	<li data-status='all'><a href="#">
+				   		所有设备:<span class="allData" style="margin-right:20px;"></span></a></li>
+				   <li data-status='online'><a href="javascript:void(0)" style="color:blue;">
+				   		在线设备:<span class="onlineData" style="margin-right:20px;"></span></a></li>
+				   <li data-status='offline'><a href="javascript:void(0)" style="color:red;">
+				   		离线设备:<span class="offlineData" style="margin-right:20px;"></span></a></li>
+				</ul>
+			</form>
+				<div class="col-lg-12" style="height:700px;">
+				   	<table id="ems_ikuai_monitor_online_dataTable"  class="display" cellspacing="0" width="100%"></table>
+					<div id="ems_ikuai_monitor_online_jqGridPager"></div>
+				</div>
+			</div>
+			
+		  <div class="tab-pane fade " id="ems_ac_info">
+		  	<form data-for-jqgrid-id="ems_ac_info_dataTable" class="ac-form  detail-form row search-form col-lg-12" style="height: 40px;">
+		  			    <input type="hidden" name="vnoId"/>
+		  			    <div class="col-lg-3 col-sm-3 col-md-3">
+							<div class='input-group date'>
+								<input type='text' name="createDate" class="form-control datepicker" data-default-value="now" data-format="YYYY-MM" /> 
+							    <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span>
+							</div>
+				 		</div>
+					 <div class="col-lg-3 col-sm-3 col-md-3">
+					 	<button class="btn btn-default btn-searchAC"   type="button">搜索</button>
+					 </div> 
+		  	</form>
+		  	<div class="col-lg-12" style="height:700px;">
+			   	<table id="ems_ac_info_dataTable"  class="display" ></table>
+				<div id="ems_ac_info_jqGridPager"></div>
+			</div>
+		  </div>	
+		   
+	     </div>
+		</div>
+    </div>
+</div>

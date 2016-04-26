@@ -1,0 +1,94 @@
+<span class="hide author">丁明亮</span>
+<form data-for-jqgrid-id="data_mt_un_bill_dataTable" class="search-form" >
+	<div class="row">
+		<div class="col-lg-3 col-sm-12 col-xs-12 col-md-3">
+			<input type="text" class="form-control" name="mobilePhone"  placeholder="手机号" />
+		</div>
+		<div class="col-lg-4 col-sm-12 col-xs-12 col-md-4">
+	  	        <div class=" pop-win  " style=';'>
+	                <div class='input-group'>
+	                 <input type='text' name="vnoName"  data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商" />
+                     <input type='text' name="vnoId" class="hide"/>
+                      <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-remove"></span>
+	                    </span>
+	                    <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-th-list"></span>
+	                    </span>
+	                </div>
+	    		</div>
+	   </div>
+		<div class="col-lg-5 col-sm-12 col-xs-12 col-md-5">
+			<div class="pull-right">
+				<button class="btn btn-default btn-search" type="button">搜索</button>
+			</div>	
+		</div>
+	</div>
+</form>
+<table id="data_mt_un_bill_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="data_mt_un_bill_jqGridPager"></div>
+<form class="detail_form">
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='unicomBillId' class='col-lg-3 col-sm-3 col-md-2 control-label'>账单号</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' name='unicomBillId' class='form-control' /> 
+		</div>
+	</div>
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='mobilePhone' class='col-lg-3 col-sm-3 col-md-2 control-label'>手机号</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' validate='{required:true}' name='mobilePhone' class='form-control creatable editable' /> 
+		</div>
+	</div>
+	<div class='col-lg-6 col-sm-12 col-md-12 ' >
+		<div><label for='vnoName' class='col-lg-3 col-sm-3 col-md-2 control-label'>企业名称</label></div>
+		<div class=' pop-win  col-lg-9 col-sm-9 col-md-10 ' >
+  	        <div class='input-group date' >
+  	        <input type='text' name='vnoName' data-pop-win='vno' class='form-control creatable  pop-win-contoller'  validate="{required:true,messages: {required:'请选择运行商'}}" />
+   	    <input type='text' name='vnoId'  class='hide'/>
+           <span class='input-group-addon pointer'>
+               <span class='glyphicon glyphicon-remove'></span>
+           </span>
+           <span class='input-group-addon pointer'>
+               <span class='glyphicon glyphicon-th-list'></span>
+           </span>
+        </div>
+    </div>
+</div>
+    <div class='col-lg-6 col-sm-12 col-md-12 '>
+        <label for='billDate' class='col-lg-3 col-sm-3 col-md-2 control-label'>账单日期</label>
+         <div class='col-lg-9 col-sm-9 col-md-10'>
+         	<div class='input-group date'>
+        		<input type='text' name='billDate' class='form-control datepicker'  data-default-value='now' /> 
+        		<span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span>
+        	</div>
+        </div>
+    </div>
+
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='month' class='col-lg-3 col-sm-3 col-md-2 control-label'>月份</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' name='month' class='form-control' /> 
+		</div>
+	</div>
+    <div class='col-lg-6 col-sm-12 col-md-12 '>
+        <label for='createDate' class='col-lg-3 col-sm-3 col-md-2 control-label'>创建日期</label>
+         <div class='col-lg-9 col-sm-9 col-md-10'>
+         	<div class='input-group date'>
+        		<input type='text' name='createDate' class='form-control datepicker'  data-default-value='now' /> 
+        		<span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span>
+        	</div>
+        </div>
+    </div>
+
+
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr"> 
+			<button type="button" class="btn btn-default "  style="display: none;">新增</button>
+	  		<button type="button" class="btn btn-default "  style="display: none;">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>

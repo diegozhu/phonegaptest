@@ -1,0 +1,135 @@
+<span class="hide author">李连谊</span>
+<form data-for-jqgrid-id="cfg_access_detail_rule_dataTable" class="row search-form" style="margin-bottom:5px;">
+	    	<div class="col-lg-4 col-sm-4 col-md-4">
+	      		<input type="text" class="form-control" name="detailRuleName" placeholder="规则名称"/>
+	      	</div>
+	      	<div class="col-lg-5 col-sm-5 col-md-5">
+	      		<div class="pop-win">
+					<div class='input-group date'>
+                		<input type='text' name="vnoName" data-pop-win="vno" class="form-control  pop-win-contoller" placeholder="企业名称"/>
+                		<input type='text' name="vnoId" class="hide"/>
+                		<span class="input-group-addon pointer"><span class="glyphicon glyphicon-remove"></span></span>
+                		<span class="input-group-addon pointer"><span class="glyphicon glyphicon-th-list"></span></span>
+            		</div>
+            	</div>
+		  	</div> 
+	      	<div class="col-lg-3 col-sm-3 col-md-3">
+	        		<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+	      	</div>
+</form>
+<table id="cfg_access_detail_rule_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="cfg_access_detail_rule_jqGridPager"></div>
+	
+<form class="detail_form" style="width:100%;margin:5px;padding:10px;border: #999 1px solid;border-radius: 10px;">
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="detailRuleName" class="col-lg-2 col-sm-3 col-md-2 control-label">规则名称</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<input type="text" class=" editable creatable form-control" name="detailRuleName" validate="{required:true, uniqueCheck:{url:'com.wboss.wcb.rating.config.AccessDetailRuleCfgSvc', method:'queryAccessDetailRule'}, messages: {required:'请输入规则名称', uniqueCheck:'名称已存在,请重输'}}"/> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="ruleType" class="col-lg-2 col-sm-3 col-md-2 control-label">规则类型</label>
+			<div class="col-lg-10 col-sm-9 col-md-10">
+				<select class="form-control creatable editable pointer status_selector ruleType"  name="ruleType">
+				</select>
+			</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="accessType" class="col-lg-2 col-sm-3 col-md-2 control-label">授权类型</label>
+			<div class="col-lg-10 col-sm-9 col-md-10">
+				<select class="form-control creatable editable pointer status_selector accessType"  name="accessType">
+				</select>
+			</div>
+	</div>
+    <div class="col-lg-6 col-sm-12 col-md-12 ">
+        <label for="sessionDTT" class="col-lg-2 col-sm-3 col-md-2 control-label">授权量</label>
+        <div class="col-lg-10 col-sm-9 col-md-10">
+            <div class="input-group">
+                <input type="text" class=" editable creatable form-control sessionDTT" name="sessionDTT" validate="{isNumber4:true,required:true}"/>
+                <div class="input-group-addon input-group-addonselect"><select class="form-control creatable editable pointer status_selector ddtunit" name="ddtunit" style='min-width:60px;width:86px'></select></div>
+            </div> 
+        </div>
+    </div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="upRate" class="col-lg-2 col-sm-3 col-md-2 control-label">上行带宽</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<div class="input-group">
+                <input type="text" class=" editable creatable form-control" name="upRate" validate="{isNumber4:true,required:true}" />
+                <div class="input-group-addon input-group-addonselect">
+                    <select class="form-control creatable editable pointer status_selector upunit" name="upunit" style='min-width:60px;width:86px'>
+					   <option value="Kbs">Kb/s</option>
+					   <option value="Mbs">Mb/s</option>
+				    </select>
+                </div>
+            </div>
+		</div> 
+	</div>
+    <div class="col-lg-6 col-sm-12 col-md-12 ">
+        <label for="timeSpanName" class="col-lg-2 col-sm-3 col-md-2 control-label">时段名称</label>
+        <div class=" pop-win col-lg-10 col-sm-9 col-md-10">
+                 <div class='input-group date'>
+                     <input type='text' name="timeSpanName" data-pop-win="timespan" class="form-control creatable editable pointer pop-win-contoller" />
+                     <input type='text' name="timeSpanId" class="hide"/>
+                        <span class="input-group-addon pointer">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </span>
+                        <span class="input-group-addon pointer">
+                            <span class="glyphicon glyphicon-th-list"></span>
+                        </span>
+                 </div>
+        </div> 
+    </div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="downRate" class="col-lg-2 col-sm-3 col-md-2 control-label">下行带宽</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<div class="input-group">
+                <input type="text" class=" editable creatable form-control" name="downRate" validate="{isNumber4:true,required:true}"/>
+                <div class="input-group-addon input-group-addonselect">
+                    <select class="form-control creatable editable pointer status_selector downunit" name="downunit" style='min-width:60px;width:86px'>
+                        <option value="Kbs">Kb/s</option>
+                        <option value="Mbs">Mb/s</option>
+                    </select>
+                </div>
+		   </div>
+        </div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="vnoName" class="col-lg-2 col-sm-3 col-md-2 control-label">企业名称</label> 
+		<div class=" pop-win col-lg-10 col-sm-9 col-md-10">
+            <div class='input-group date'>
+             <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable pop-win-contoller" validate="{required:true,messages: {required:'请选择运营商'}}" />
+                <input type='text' name="vnoId" class="hide"/>
+                <span class="input-group-addon pointer">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </span>
+	            <span class="input-group-addon pointer">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                </span>
+            </div>
+	    </div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="detailRuleDesc" class="col-lg-2 col-sm-3 col-md-2 control-label">规则描述</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<textarea cols="22" rows="3" name="detailRuleDesc" class=" creatable editable form-control col-md-4" ></textarea>
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+			<input type="hidden" class="form-control" name="detailRuleId" /> 
+	</div>
+	<div style="clear:both;"></div>
+	<div class="row">
+		<div class="col-sm-4 col-md-3 col-lg-2 fr">
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div>
+	</div>
+</form>
+
+<style type="text/css">
+	.modal-dialog{
+		width:75%;
+	}
+</style>

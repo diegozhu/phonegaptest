@@ -1,0 +1,30 @@
+<span class="hide author">朱海洋</span>
+<form data-for-jqgrid-id="stat_userrequest_dataTable" class="search-form" >
+    <div class="row">
+    <div class="col-lg-3 col-sm-6 col-xs-12 col-md-3"><input type='text' name="acRet" class="form-control"  placeholder="AC返回值" /></div>
+    <div class="col-lg-3 col-sm-6 col-xs-12 col-md-3"><input type='text' name="ssid" class="form-control"  placeholder="SSID" /></div>
+    <div class="col-lg-3 col-sm-6 col-xs-12 col-md-3"><input type='text' name="staIp" class="form-control"  placeholder="用户IP" /></div>
+    <div class="col-lg-3 col-sm-6 col-xs-12 col-md-3">
+        <div class="pop-win">
+         <div class='input-group'>
+            <input type='text'  name="vnoName" data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商" />
+            <input type='text' name="vnoId" class="hide"/>
+            <span class="input-group-addon pointer"><span class="glyphicon glyphicon-remove"></span></span>
+            <span class="input-group-addon pointer"><span class="glyphicon glyphicon-th-list"></span></span>
+         </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12 col-xs-12 col-md-6">
+        <div class="input-group datetimepickerspan" data-range="10d"><!--时间间隔不能超过10天-->
+            <input type='text'  name="beginDate" class="form-control creatable datepicker startTime" data-default-value="today" data-max="now+1d"/>
+            <span class="input-group-addon input-group-addon-middle "><span class="glyphicon glyphicon-calendar"></span></span>
+            <input type='text'  name="endDate" class="form-control creatable datepicker endTime" data-default-value="today+1d" data-max="now+1d"/>
+        </div>
+    </div>
+    <div class="col-lg-2 col-sm-4 col-xs-5 col-md-2"><div class="checkbox"><label><input type='checkbox' name="onlyShowFailed" />仅看失败</label></div></div>
+    <div class="col-lg-2 col-sm-4 col-xs-5 col-md-2"><div class="checkbox"><label><input type='checkbox' name="qryChildrenVno"/>查询子vno</label></div></div>
+    <div class="col-lg-2 col-sm-4 col-xs-2 col-md-2"><div class="pull-right"><button class="btn btn-default btn-search" type="button" >搜索</button></div></div>
+    </div>
+</form>
+<table id="stat_userrequest_dataTable"></table>
+<div id="stat_userrequest_jqGridPager"></div>

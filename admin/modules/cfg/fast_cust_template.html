@@ -1,0 +1,149 @@
+<span class="hide author">周鑫</span>
+<form data-for-jqgrid-id="cust_cust_dataTable" class="row search-form" style="margin-bottom: 5px;">
+	<div class="col-lg-10 col-md-10 col-sm-10 my-search-group">
+		<div class="col-lg-3 col-sm-4 col-md-4">
+			<input type="text" class="form-control" name="custTemplateName"  placeholder="模板名称" />
+		</div>
+		<div class="col-lg-4 col-sm-4 col-md-4">
+	  	        <div class=" pop-win" >
+	                <div class='input-group'>
+	                 <input type='text' name="vnoName"  data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商" />
+                     <input type='text' name="vnoId" class="hide"/>
+                      <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-remove"></span>
+	                    </span>
+	                    <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-th-list"></span>
+	                    </span>
+	                </div>
+	    		</div>
+	   </div>
+		<div class="col-lg-4 col-sm-4 col-md-4">
+				<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+		</div>
+	</div>
+</form>
+<table id="cust_cust_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="cust_cust_jqGridPager"></div>
+<form class="detail_form">
+	<div><input type="text" name="custTemplateId" hidden="hidden" ></div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custTemplateName" class="col-lg-3 col-sm-3 col-md-2 control-label">模板名称</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<input type="text" class="creatable editable form-control" name='custTemplateName' validate="{required:true,messages: {required:'请输入模板名称',uniqueCheck:'模板名称已存在'},uniqueCheck: {url:'com.wboss.wcb.custmgr.FastCustTemplateSvc', method: 'queryFasCustTemplate'}}"  /> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custTemplateType" class="col-lg-3 col-sm-3 col-md-2 control-label">模板类型</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<select data-bind='foreach:DIC_CUST_TYPE' name="custTemplateType" class="creatable status-valid editable pointer form-control">
+				<option class='form-control' data-bind="value:v,text:n"></option>
+				
+			</select>
+		</div> 
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custName" class="col-lg-3 col-sm-3 col-md-2 control-label"  >客户名称</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable" name="custName" validate="{required:true,messages: {required:'请输入客户名称'}}" /> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12  pop-win">
+		<label for="offerId" class="col-lg-3 col-sm-3 col-md-2 control-label">默认订购商品</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10 pop-win">  
+		<div class='input-group '>
+			<input type="text" class="pop-win-contoller form-control editable creatable" data-pop-win="product_offer" name="offerName"  validate="{required:true,messages: {required:'请输入商品标识'}}" /> 
+			<input type='text' name="offerIds" class="hide" />
+              <span class="input-group-addon pointer">
+	             <span class="glyphicon glyphicon-remove"></span>
+	                </span>
+	               <span class="input-group-addon pointer">
+	             <span class="glyphicon glyphicon-th-list"></span>
+	            </span> 
+		</div> 
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="orgnizationName" class="col-lg-3 col-sm-3 col-md-2 control-label">组织标识</label>
+			<div class="pop-win col-lg-9 col-sm-9 col-md-10">
+				<div class='input-group'>
+					<input type='text' name="orgnizationName" data-pop-win="orgnization" class="form-control creatable editable pop-win-contoller" placeholder="组织" />
+					<input type='text' name="orgnizationId" class="hide"/>
+					<span class="input-group-addon pointer"> <span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon pointer"> <span class="glyphicon glyphicon-th-list"></span></span>
+				</div>
+			</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custName" class="col-lg-3 col-sm-3 col-md-2 control-label"  >偏移时间类型</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<select data-bind="foreach:DIC_OFFSET_TIME_TYPE_T" name="offsetTimeType" class="  status-valid editable pointer form-control creatable DicoffsetTimeType" >
+				<option class='form-control' data-bind="value:v,text:n"  value=''></option>
+			</select>
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custName" class="col-lg-3 col-sm-3 col-md-2 control-label"  >客户有效偏移时间</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable manual_handle" name="effOffsetValue" validate="{isNumber3:true,required:true}" /> 
+		</div> 
+	</div>
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custName" class="col-lg-3 col-sm-3 col-md-2 control-label"  >客户失效偏移时间</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable manual_handle" name="expOffsetValue" validate="{isNumber3:true,required:true}" /> 
+		</div> 
+	</div>
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custName" class="col-lg-3 col-sm-3 col-md-2 control-label"  >密码失效偏移类型</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<select data-bind="foreach:DIC_OFFSET_TIME_TYPE_P" name="passExpOffsetType" class=" status-valid editable pointer form-control creatable Dicpassexpoffsettype" >
+				<option class='form-control' data-bind="value:v,text:n" value=''></option>
+			</select>
+		</div> 
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="custName" class="col-lg-3 col-sm-3 col-md-2 control-label"  >密码失效偏移时间</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable manual_handle" name="passExpOffsetValue" validate="{isNumber3:true,required:true}"  /> 
+		</div> 
+	</div>
+	
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-3 col-sm-3 col-md-2 control-label">状态</label> 
+		<div class="col-lg-9 col-sm-9 col-md-10"> 
+			<select data-bind="foreach:DIC_FASTCUST_STATUS_TYPE" name="status" class=" status-valid editable pointer form-control status_selector" >
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+		  <div class="col-lg-6 col-sm-12 col-md-12 " >
+	<div ><label for="vnoId" class="col-lg-3 col-sm-3 col-md-2 control-label">企业名称</label> </div>
+	  	<div class=" pop-win  col-lg-9 col-sm-9 col-md-10 " >
+	                <div class='input-group date' >
+	                <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable  pop-win-contoller"validate="{required:true,messages: {required:'请选择运行商'}}" />
+                    <input type='text' name="vnoId" class="hide"/>
+                    <span class="input-group-addon pointer">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </span>
+                    <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-th-list"></span>
+	                    </span>
+	                </div>
+	    		</div>
+	  </div>
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr"> 
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>

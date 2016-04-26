@@ -1,0 +1,159 @@
+<span class="hide author">李雪缔</span>
+<div style="width:100%;margin:0 auto;">
+	<div style="width:49%;height:30px;float:left;height:100%;">
+		<form data-for-jqgrid-id="adp_ad_policy_dataTable" class="row search-form" style="margin-bottom: 5px;">
+		    <div class="col-lg-10 col-md-10 col-sm-10 my-search-group">
+					<div class="col-lg-8 col-sm-8 col-md-8">
+					   <input type="text" class="form-control" name="policyName" placeholder="广告策略名称 "/>
+		            </div>
+		            
+					<div class="col-lg-3 col-sm-3 col-md-3">
+						    <span>
+							<button class="btn btn-default btn-search" type="button" style="float:left">搜索</button>
+						    </span>
+					</div>
+			</div>
+		</form>
+		<table id="adp_ad_policy_dataTable" class="display" cellspacing="0" width="100%"></table>
+		<div id="adp_ad_policy_jqGridPager"></div>
+	
+	<form class="row detail_form" >
+		<input type="hidden" name="getPolicyId" class="form-control">
+		<div class="col-lg-12 col-sm-12 col-md-12 mt10">
+			<label for="policyName" class="col-lg-3 col-sm-3 col-md-2 control-label">广告策略名称</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+				<input type="text" name="policyName"
+					class="editable creatable pointer form-control" validate="{required:true, uniqueCheck: {url: 'com.wboss.wcb.admin.ad.AdGetPolicySvc', method: 'queryPolicy'}}"  />
+			</div>
+		</div>
+		<div class="col-lg-12 col-sm-12 col-md-12 mt10">
+			<label for="status" class="col-lg-3 col-sm-3 col-md-2 control-label" >状态</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+				<select disabled name="status"
+			class=" editable pointer form-control status_selector" data-bind="foreach:DIC_VLAN_STATUS">
+			<option class="form-control" data-bind="value:v,text:n"></option>
+			</select>
+			</div>
+		</div>  
+		 <div class="col-lg-12 col-sm-12 col-md-12 mt10">
+			<label for="policyDesc" class="col-lg-3 col-sm-3 col-md-2 control-label">描述</label>
+			<div class="col-lg-9 col-sm-9 col-md-10">
+				<textarea cols="22" rows="3" name="policyDesc"
+					class="form-control editable creatable form-control col-md-4" ></textarea>
+			</div>
+		</div> 
+		<div class="col-lg-12 col-sm-12 col-md-12 mt10">
+			<label for="vnoName" class="col-lg-3 col-sm-3 col-md-2 control-label">企业名称</label>
+			<div class=" pop-win col-lg-9 col-sm-9 col-md-10">
+				<div class='input-group date'>
+					<input type='text' name="vnoName" data-pop-win="vno"
+						class="form-control creatable pop-win-contoller"
+						validate="{required:true,messages: {required:'请选择内容'}}"  />
+					<input type='text' name="vnoId" class="hide" /> <span
+						class="input-group-addon pointer"> <span
+						class="glyphicon glyphicon-remove"></span>
+					</span> <span class="input-group-addon pointer"> <span class="glyphicon glyphicon-th-list"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="row"> 
+			<div class="col-sm-8 col-md-6 col-lg-4 fr"> 
+				<button type="button" class="btn btn-default btn-class-new">新增</button>
+		  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+		  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+		  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+			</div> 
+		</div>
+	</form>
+</div>
+<div style="width:49%;float:left;height:100%;margin-left:10px;margin-top:40px;">
+<!-- <form data-for-jqgrid-id="adp_ad_policy_content_dataTable" class="row search-form" style="margin-bottom: 5px;">
+    <div class="col-lg-10 col-md-10 col-sm-10 my-search-group">
+	</div>
+</form> -->
+	<table id="adp_ad_policy_content_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="adp_ad_policy_content_jqGridPager"></div>
+	
+	<form class=" row detail_content_form" 
+	style="width: 100%; margin:5px 0px; padding: 10px; border: #999 1px solid; border-radius: 10px;">
+	<input type="hidden" name="policyContentId" class="form-control">
+	
+	<div class="col-lg-12 col-sm-12 col-md-12 mt10" >
+		<label for="referObjType" class="col-lg-3 col-sm-3 col-md-2 control-label">参考对象类型</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+		<select  name="referObjType" class=" editable creatable pointer form-control status_selector " data-bind="foreach:DIC_REFER_OBJ_TYPE">
+			<option class="form-control" data-bind="value:v,text:n"></option>
+		</select>
+		</div>
+	</div>
+	<div class="col-lg-12 col-sm-12 col-md-12 mt10 refer_obj_code">
+		<label for="referObjCode" class="col-lg-3 col-sm-3 col-md-2 control-label">参考对象编码</label>
+		<input type='text' name="referObjCode" style="display:none"/>
+		<!-- ssid -->
+		<div class=" pop-win col-lg-9 col-sm-9 col-md-10 ">
+			<div class='input-group date'>
+				<input type='text' name="ssid" data-pop-win="ssid" 
+					class="form-control creatable editable pop-win-contoller popwin_r" 
+					validate="{required:true,messages: {required:'请选择内容'}}"  />
+				<input type='text' name="ssidId" class="hide " /> <span
+					class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-remove"></span>
+				</span> <span class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-th-list"></span>
+				</span>
+			</div>
+		</div>
+			<!-- 行业 -->
+		<div class="col-lg-9 col-sm-9 col-md-10 industry_type" style="display:none;">
+		<select  name="industry_type" class=" editable creatable pointer form-control status_selector industry ">
+		</select>
+		</div>
+	</div>
+	<div class="col-lg-12 col-sm-12 col-md-12 mt10">
+		<label for="operator" class="col-lg-3 col-sm-3 col-md-2 control-label">运算符</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+		<select  name="operator" class=" editable creatable pointer form-control status_selector" data-bind="foreach:DIC_OPERATOR">
+		<option class="form-control" data-bind="value:v,text:n"></option>
+		</select>
+		</div>
+	</div> 
+	<div class="col-lg-12 col-sm-12 col-md-12 mt10">
+		<label for="status" class="col-lg-3 col-sm-3 col-md-2 control-label">状态</label>
+		<div class="col-lg-9 col-sm-9 col-md-10">
+			<select disabled name="status"
+		class=" editable pointer form-control status_selector" data-bind="foreach:DIC_VLAN_STATUS">
+		<option class="form-control" data-bind="value:v,text:n"></option>
+		</select>
+		</div>
+	</div> 
+	<div class="col-lg-12 col-sm-12 col-md-12 mt10">
+		<label for="vnoName" class="col-lg-3 col-sm-3 col-md-2 control-label">企业名称</label>
+		<div class=" pop-win col-lg-9 col-sm-9 col-md-10">
+			<div class='input-group date'>
+				<input type='text' name="vnoName" data-pop-win="vno"
+					class="form-control creatable  pop-win-contoller"
+					validate="{required:true,messages: {required:'请选择内容'}}"  />
+				<input type='text' name="vnoId" class="hide" /> <span
+					class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-remove"></span>
+				</span> <span class="input-group-addon pointer"> <span
+					class="glyphicon glyphicon-th-list"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-8 col-md-6 col-lg-4 fr"> 
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>
+</div>
+<div style="clear:both;"> </div>
+</div>

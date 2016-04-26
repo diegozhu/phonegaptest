@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>wboss_index</title>
+</head>
+<script type="text/javascript">
+  debugger
+  var href = location.href;
+  if(href.indexOf("?") == -1){
+	  href = "/error.jsp?arg=urlerror";
+  }else if(href.match(/wbossstatic\/\?/i)){
+    href = href.replace(/wbossstatic\/\?/i,"/wbss?");
+  }else if(href.match(/\/index.html\?/i)){
+    href = href.replace(/\/index.html\?/i,"/wbss?");
+  }else if(href.match(/\/\?/i)){
+    href = href.replace(/\/\?/i,"/wbss?");
+  }
+  location.replace(href);
+</script>
+<body>
+</body>
+</html>

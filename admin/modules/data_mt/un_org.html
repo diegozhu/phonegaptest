@@ -1,0 +1,67 @@
+<span class="hide author">丁明亮</span>
+<form data-for-jqgrid-id="data_mt_un_org_dataTable" class="search-form">
+	<div class="row">
+		<div class="col-lg-3 col-sm-12 col-xs-12 col-md-3">
+			<input type="text" class="form-control" name="orgName"  placeholder="名称" />
+		</div>
+		<div class="col-lg-9 col-sm-12 col-xs-12 col-md-9">
+			<div class="pull-right">
+				<button class="btn btn-default btn-search" type="button">搜索</button>
+			</div>
+		</div>
+	</div>
+</form>
+<table id="data_mt_un_org_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="data_mt_un_org_jqGridPager"></div>
+<form class="detail_form">
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='unicomOrgId' class='col-lg-3 col-sm-3 col-md-2 control-label'>编号</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' name='unicomOrgId' class='form-control' /> 
+		</div>
+	</div>
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='orgName' class='col-lg-3 col-sm-3 col-md-2 control-label'>名称</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' validate='{required:true}' name='orgName' class='form-control creatable editable' /> 
+		</div>
+	</div>
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='province' class='col-lg-3 col-sm-3 col-md-2 control-label'>省份</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' validate='{required:true}' name='province' class='form-control creatable editable' /> 
+		</div>
+	</div>
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='city' class='col-lg-3 col-sm-3 col-md-2 control-label'>城市</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' validate='{required:true}' name='city' class='form-control creatable editable' /> 
+		</div>
+	</div>
+   <div class='col-lg-6 col-sm-12 col-md-12 '>
+	 	<label for='district' class='col-lg-3 col-sm-3 col-md-2 control-label'>区/县</label>
+       <div class='col-lg-9 col-sm-9 col-md-10'>
+        	<input type='text' validate='{required:true}' name='district' class='form-control creatable editable' /> 
+		</div>
+	</div>
+    <div class='col-lg-6 col-sm-12 col-md-12 '>
+        <label for='createDate' class='col-lg-3 col-sm-3 col-md-2 control-label'>创建日期</label>
+         <div class='col-lg-9 col-sm-9 col-md-10'>
+         	<div class='input-group date'>
+        		<input type='text' name='createDate' class='form-control datepicker'  data-default-value='now' /> 
+        		<span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span>
+        	</div>
+        </div>
+    </div>
+
+
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr"> 
+			<button type="button" class="btn btn-default "  style="display: none;">新增</button>
+	  		<button type="button" class="btn btn-default "  style="display: none;">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>

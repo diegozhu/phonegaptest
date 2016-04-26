@@ -1,0 +1,140 @@
+<span class="hide author">周鑫</span>
+<form data-for-jqgrid-id="cfg_portal_acc_dataTable" class="search-form">
+	<div class="col-lg-5 col-sm-4 col-md-4">
+		<input type="text" class="form-control" name="policyName"  placeholder="策略名称" />
+	</div>
+	<div class="col-lg-5 col-sm-4 col-md-4">
+        <div class=" pop-win">
+             <div class='input-group'>
+              <input type='text' name="vnoName"  data-pop-win="vno" class="form-control creatable editable pop-win-contoller" placeholder="虚拟运营商" />
+                 <input type='text' name="vnoId" class="hide"/>
+                  <span class="input-group-addon pointer">
+                     <span class="glyphicon glyphicon-remove"></span>
+                 </span>
+                 <span class="input-group-addon pointer">
+                     <span class="glyphicon glyphicon-th-list"></span>
+                 </span>
+             </div>
+   		</div>
+   </div>
+	<div class="col-lg-2 col-sm-4 col-md-4">
+		<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+	</div>
+	<div style="clear:both;"></div>
+</form>
+<table id="cfg_portal_acc_dataTable" class="display" cellspacing="0" ></table>
+	<div id="cfg_portal_acc_jqGridPager"></div>
+<form class="detail_form">
+	<div><input type="text" name="portalAccPolicyId" hidden="hidden" ></div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="portalAccPolicyId" class="col-lg-2 col-sm-3 col-md-2 control-label"  >策略名称</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<input type="text" class="form-control editable creatable" name="policyName" validate="{required:true,messages: {required:'请输入内容',uniqueCheck:'策略名称已存在'},uniqueCheck: {url:'com.wboss.wcb.auth.authmgr.PortalAccPolicySvc', method: 'queryPortalAcc'}}"  /> 
+		</div> 
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12   ">
+		<label for="portalThemeId" class="col-lg-2 col-sm-3 col-md-2 control-label ">portal主题</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10 pop-win" > 
+		<div class='input-group'>
+	    <input type='text' name="portalThemeName"  data-pop-win="portal_theme_id" class="form-control creatable editable pop-win-contoller" validate="{required:true,messages:{required:'主题不能为空'}}" placeholder="主题名称" />
+		<input type='text' name="portalThemeId" class="hide" />
+              <span class="input-group-addon pointer">
+	             <span class="glyphicon glyphicon-remove"></span>
+	                </span>
+	               <span class="input-group-addon pointer">
+	             <span class="glyphicon glyphicon-th-list"></span>
+	            </span>          
+				</div> 
+			</div> 
+	</div>
+	
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="loginPage" class="col-lg-2 col-sm-3 col-md-2 control-label">第三方首页</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10">  
+			<input type="text" class="form-control editable creatable" name="loginPage"   /> 
+		</div> 
+	</div>
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="loginOkPage" class="col-lg-2 col-sm-3 col-md-2 control-label">登录成功页面</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10">  
+			<input type="text" class="form-control editable creatable" name="loginOkPage"   /> 
+		</div> 
+	</div>
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="autoCreatAcct" class="col-lg-2 col-sm-3 col-md-2 control-label">自助开户</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10">  
+			<select disabled data-bind="foreach:DIC_BOOLEAN_TYPE" name="autoCreatAcct" class="creatable status-valid editable pointer form-control">
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div> 
+	</div>
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="snAuthFlag" class="col-lg-2 col-sm-3 col-md-2 control-label">社会化认证</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10">  
+			<select disabled data-bind="foreach:DIC_BOOLEAN_TYPE" name="snAuthFlag" class="creatable status-valid editable pointer form-control" >
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div> 
+	</div>
+	
+	
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="accAuthType" class="col-lg-2 col-sm-3 col-md-2 control-label">接入鉴权类型</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<select data-bind="foreach:DIC_LOGIN_AUTH_TYPE" name="accAuthType" class="creatable status-valid editable pointer form-control accAuthType_selector" validate="{required:true,messages: {required:'请选择类型'}}"  >
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div> 
+	</div>
+	
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="passNotifyType" class="col-lg-2 col-sm-3 col-md-2 control-label">密码通知形式</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10">  
+			<select disabled data-bind="foreach:DIC_PASSNOTIFY_TYPE" name="passNotifyType" class="creatable status-valid editable pointer form-control">
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div> 
+	</div>
+	
+		<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-2 col-sm-3 col-md-2 control-label">状态</label> 
+		<div class="col-lg-10 col-sm-9 col-md-10"> 
+			<select disabled data-bind="foreach:DIC_VLAN_STATUS" name="status" class="creatable status-valid editable pointer form-control status_selector" >
+				<option class='form-control' data-bind="value:v,text:n"></option>
+			</select>
+		</div>
+	</div>
+	
+  <div class="col-lg-6 col-sm-12 col-md-12 " >
+	<div><label for="vnoName" class="col-lg-2 col-sm-3 col-md-2 control-label">企业名称</label></div>
+ 		<div class=" pop-win  col-lg-10 col-sm-9 col-md-10 " >
+              <div class='input-group date' >
+              <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable  pop-win-contoller"  validate="{required:true,messages: {required:'请选择运行商'}}"/>
+                 <input type='text' name="vnoId"  class="hide"/>
+                 <span class="input-group-addon pointer">
+                     <span class="glyphicon glyphicon-remove"></span>
+                 </span>
+                 <span class="input-group-addon pointer">
+                      <span class="glyphicon glyphicon-th-list"></span>
+                  </span>
+              </div>
+  		</div>
+ 	</div>
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr"> 
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>

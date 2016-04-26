@@ -1,0 +1,121 @@
+<span class="hide author">李连谊</span>
+<form data-for-jqgrid-id="cfg_auth_dataTable" class="row search-form" style="margin-bottom:5px;">
+	    	<div class="col-lg-4 col-sm-4 col-xs-12 col-md-4">
+	      		<input type="text" class="form-control" name="authenName" placeholder="鉴权策略名称"/>
+	      	</div>
+	      	<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+	      		<div class="pop-win">
+	                <div class='input-group'>
+	                 	<input type='text' name="vnoName" data-pop-win="vno" class="pop-win-contoller form-control" placeholder="企业名称" />
+                     	<input type='text' name="vnoId" class="hide"/>
+                      		<span class="input-group-addon pointer">
+	                        	<span class="glyphicon glyphicon-remove"></span>
+	                    	</span>
+	                    	<span class="input-group-addon pointer">
+	                        	<span class="glyphicon glyphicon-th-list"></span>
+	                    	</span>
+	                </div>
+	            </div>
+			</div>
+	      	<div class="col-lg-3 col-sm-3 col-xs-12 col-md-3">
+	        		<button class="btn btn-default btn-search pull-right" type="button">搜索</button>
+	      	</div>
+</form>
+
+<table id="cfg_auth_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="cfg_auth_jqGridPager"></div>
+
+<form class="detail_form" style="width:100%;margin:5px;padding:10px;border: #999 1px solid;border-radius: 10px;">
+	
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="authenName" class="col-lg-3 col-sm-4 col-md-3 control-label">鉴权策略名称</label> 
+		<div class="col-lg-9 col-sm-8 col-md-9"> 
+			<input type="text" class=" editable creatable form-control" name="authenName" validate="{required:true, uniqueCheck:{url:'com.wboss.wcb.auth.authmgr.AuthSvc', method:'queryAuthentication'}, messages:{required:'请输入鉴权策略名称',uniqueCheck:'名称已存在,请重输'}}"/> 
+		</div>																			  
+		
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="upVerifyType" class="col-lg-3 col-sm-4 col-md-3 control-label">用户名密码校验类型</label>
+			<div class="col-lg-9 col-sm-8 col-md-9">  
+				<select data-bind="foreach:DIC_UP_VERIFY_TYPE" id="cfg_auth_upVerifyType" class="form-control creatable editable pointer status_selector"  name="upVerifyType">
+					<option class='form-control' data-bind="value:v,text:n"></option>
+				</select>
+			</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="accBindType" class="col-lg-3 col-sm-4 col-md-3 control-label">访问限制类型</label>
+			<div class="col-lg-9 col-sm-8 col-md-9">  
+				<select data-bind="foreach:DIC_ACC_BIND_TYPE" id="cfg_auth_accBindType" class="form-control creatable editable pointer status_selector accBindType"  name="accBindType">
+					<option class='form-control' data-bind="value:v,text:n"></option>
+				</select>
+			</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="bindServLimit" class="col-lg-3 col-sm-4 col-md-3 control-label">绑定终端限制计数</label> 
+		<div class="col-lg-9 col-sm-8 col-md-9"> 
+			<input type="text" class=" editable creatable form-control manual_handle" name="bindServLimit" disabled="disabled"/> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="accServLimit" class="col-lg-3 col-sm-4 col-md-3 control-label">访问终端限制计数</label> 
+		<div class="col-lg-9 col-sm-8 col-md-9"> 
+			<input type="text" class=" editable creatable form-control manual_handle" name="accServLimit" disabled="disabled"/> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="isForceDm" class="col-lg-3 col-sm-4 col-md-3 control-label">是否强踢在线用户</label>
+			<div class="col-lg-9 col-sm-8 col-md-9">
+				<select data-bind="foreach:DIC_BOOLEAN_TYPE" id="cfg_auth_isForceDm" class="form-control creatable editable pointer status_selector"  name="isForceDm">
+					<option class='form-control' data-bind="value:v,text:n"></option>
+				</select>
+			</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="priority" class="col-lg-3 col-sm-4 col-md-3 control-label">优先级</label> 
+		<div class="col-lg-9 col-sm-8 col-md-9"> 
+			<input type="text" class=" editable creatable form-control" name="priority" validate="{isNumber8:true,required:true}"/> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="status" class="col-lg-3 col-sm-4 col-md-3 control-label">状态</label>
+			<div class="col-lg-9 col-sm-8 col-md-9">  
+				<select data-bind="foreach:DIC_STATUS" id="cfg_auth_status" class="form-control editable pointer status_selector"  name="status">
+					<option class='form-control' data-bind="value:v,text:n"></option>
+				</select>
+			</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="vnoName" class="col-lg-3 col-sm-4 col-md-3 control-label">企业名称</label> 
+		<div class=" pop-win col-lg-9 col-sm-8 col-md-9">
+	                <div class='input-group date'>
+	                 <input type='text' name="vnoName" data-pop-win="vno" class="form-control creatable pop-win-contoller" validate="{required:true,messages: {required:'请选择运营商'}}" />
+                     <input type='text' name="vnoId" class="hide"/>
+	                    <span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-remove"></span>
+	                    </span>
+						<span class="input-group-addon pointer">
+	                        <span class="glyphicon glyphicon-th-list"></span>
+	                    </span>
+	                </div>
+	    </div>
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="authenDesc" class="col-lg-3 col-sm-4 col-md-4 control-label">策略描述</label> 
+		<div class="col-lg-9 col-sm-8 col-md-8">
+			<textarea cols="22" rows="3" name="authenDesc" class=" creatable editable form-control col-md-4" ></textarea>
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<input type="hidden" class="form-control" name="authenId" />
+	</div>
+	
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr">
+			<button type="button" class="btn btn-default btn-class-new">新增</button>
+	  		<button type="button" class="btn btn-default btn-class-edit">编辑</button>
+	  		<button type="button" class="btn btn-default btn-class-ok" style="display: none;">确定</button>
+	  		<button type="button" class="btn btn-default btn-class-cancel" style="display: none;">取消</button>
+		</div> 
+	</div>
+</form>

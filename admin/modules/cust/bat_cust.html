@@ -1,0 +1,75 @@
+<span class="hide author">周鑫</span>
+<form class="detail_form">
+<div><input type="text" name="batchNo" hidden="hidden" ></div>
+	<div class="col-lg-12 col-sm-12 col-md-12 ">
+		<div class="col-lg-6 col-sm-6 col-md-6">
+			<label for="acId" class="col-lg-4 col-sm-3 col-md-3 control-label">批量业务类型</label> 
+			<div class="col-lg-7 col-sm-6 col-md-6"> 
+				<select  name="batchBusinessType" class=" status-valid  pointer form-control status_selector batchBusinessType" >
+					<option value="0" selected = "selected">批量开户</option>
+			        <option value="1">批量销户</option>
+			        <option value="2">批量停机</option>
+			        <option value="3">批量复机</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-12 col-sm-12 col-md-12 " style="margin-top: 11px">
+	<div class="col-lg-6 col-sm-6 col-md-6">
+		<label for="#" class="col-lg-4 col-sm-3 col-md-3 control-label">文件名</label> 
+		<div class="col-lg-7 col-sm-9 col-md-9  pop-win"> 
+			<div class="input-group date"> 
+					<input type='text' name="filename"  data-pop-win="upload" class="form-control creatable pop-win-contoller" validate="{required:true}" placeholder="文件名" />
+                    <input type='text' name="filetype" value='file' class="hide" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                    <input type='text' name="shortpath" value='true' class="hide"/>
+                    <span class="input-group-addon pointer"> 
+                     	<span class="fa fa-fw fa-cloud-upload"></span>
+                    </span>
+			</div> 
+		</div>  
+	</div>
+		<div  class="col-lg-6 col-sm-6 col-md-6">
+	 		<a class="btn btn-default btn-sm " href='template/批量开户.xlsx' >开户模板下载</a>
+	 		<a class="btn btn-default btn-sm " href='template/批量销户停复机.xlsx'>销户停复机模板下载</a>
+		</div>
+	</div>
+	
+	
+	<div class="col-lg-12 col-sm-12 col-md-12 ">
+			<div class="col-lg-6 col-sm-6 col-md-6 ">
+			<div class="col-lg-4 col-sm-6 col-md-6" style='padding-top: 12px;'>
+				<input type="checkbox" name="checkBox" checked='true'/>
+				<label>立即执行</label> 
+				<label style='margin-left:20px'>执行时间</label> 
+		</div>	
+		<div class="col-lg-7 col-sm-6 col-md-6 ">
+		 	<div class='input-group date'>
+                <input type='text' name="applyTime" data-min='now'  class="form-control  datepicker" validate="{required:true}"/>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+	</div>	
+	</div>	
+	</div>
+	
+	<div class=" pop-win" style='display:none'>
+				<input type='text' name="status" value="0" />
+	                <div class='input-group date' >
+	                <input type='text' name="vnoName"  />
+                    <input type='text' name="vnoId" />
+                    <input type='text' name="batchMode" value="F"/>
+	                </div>
+	    		</div>
+	
+
+	
+	<div style="clear:both;"></div>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-3 col-lg-2 fr" style="margin-right: 150px"> 
+	  		<button type="button" class="btn btn-default btn-search btn_class_submit " >提交</button>
+		</div> 
+	</div>
+	
+</form>

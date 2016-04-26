@@ -1,0 +1,53 @@
+﻿<span class="hide author">朱海龙</span>
+<form class="detail_form" style="width:70%;min-height:260px;border: #999 1px solid; border-radius: 10px;">
+	<div id="cust_custDetails_dataTable" style="min-height: 260px;margin-top:15px;">
+	   	<div class="col-lg-12 col-sm-12 col-md-12 p10">
+			<label for="vnoName" class="col-lg-2 col-sm-2 col-md-2 control-label ">企业名称</label>
+			<div class="col-lg-10 col-sm-10 col-md-10  pop-win">
+				<div class='input-group date'>
+					<input type='text' name="vnoName" data-pop-win="vno" class="form-control  pop-win-contoller"  validate="{required:true,messages: {required:'请选择运营商'}}"   placeholder="请选择" />
+					<input type='text' name="vnoId" class="hide" />
+					<span class="input-group-addon pointer"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon pointer"><span class="glyphicon glyphicon-th-list"></span></span>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col-lg-12 col-sm-12 col-md-12 ">
+			<label for="custCode" class="col-lg-2 col-sm-2 col-md-2 control-label">客户账号</label>
+			<div class="col-lg-10 col-sm-10 col-md-10">
+				<input type="text" class="form-control editable creatable" name="custCode" validate="{required:true, uniqueCheck: {url: 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'isCustCodeExists', params: ['vnoId']},messages: {required:'请输入内容',uniqueCheck:'账号不存在'}}"  />
+			</div>
+		</div>
+	        
+		<div class="col-lg-12 col-sm-12 col-md-12 ">
+			<label for="cardNo" class="col-lg-2 col-sm-2 col-md-2 control-label">充值卡号</label>
+			<div class="col-lg-10 col-sm-10 col-md-10">
+				<input type="text" class="form-control editable creatable" name="cardNo" validate="{required:true, uniqueCheck: {url: 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'isCardNoExists'},messages: {required:'请输入内容',uniqueCheck:'卡号不存在'}}"  />
+			</div>
+		</div>
+		
+		<div class="col-lg-12 col-sm-12 col-md-12  form-group">
+			<label for="pinCode" class="col-lg-2 col-sm-2 col-md-2 control-label">卡密码</label>
+			<div class="col-lg-10 col-sm-10 col-md-10">
+				<input type="password" class="form-control editable creatable" name="pinCode" validate="{required:true, uniqueCheck: {url: 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'checkPinCode', params: ['cardNo']},messages: {required:'请输入内容',uniqueCheck:'密码不正确'}}"  />
+			</div>
+		</div>
+		
+		<div class="text-center col-lg-12 col-sm-12 col-md-12 ">
+				<button class="btn btn-default btn-search" name="cardRecharge" type="button" >充值</button>
+				<button class="btn btn-default btn-search" name="reset" type="button" >重置</button>
+		</div>
+	
+		</div>	
+</form>
+
+
+
+
+
+
+
+
+
+

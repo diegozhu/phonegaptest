@@ -1,0 +1,48 @@
+<span class="hide author">李连谊</span>
+<form data-for-jqgrid-id="adp_ad_show_template_dataTable" class="row search-form" style="margin-bottom:5px;">
+	    <div class="col-lg-11 col-sm-9 col-md-9 my-search-group" style="float:left">
+	    	<div class="col-lg-6 col-sm-6 col-md-6">
+	      		<input type="text" class="form-control" name="templateName" placeholder="页面名称"/>
+	      	</div>
+	      	<div>
+	      		<input type="hidden"  name="tmpType"/>
+	      	</div>
+	      	<div class="col-lg-4 col-sm-4 col-md-4">
+	        		<button class="btn btn-default btn-search" type="button">搜索</button>
+	      	</div>
+	    </div> 
+</form>
+
+<table id="adp_ad_show_template_dataTable" class="display" cellspacing="0" width="100%"></table>
+	<div id="adp_ad_show_template_jqGridPager"></div>
+	
+<form class="detail_form" style="width:100%;margin:5px;padding:10px;border: #999 1px solid;border-radius: 10px;">
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="memberAlias" class="col-lg-2 col-sm-3 col-md-2 control-label">成员别名</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<input type="text" class=" editable creatable form-control" name="memberAlias" validate="{required:true, messages: {required:'请输入别名'}}"/> 
+		</div> 
+	</div>
+	<div class="col-lg-6 col-sm-12 col-md-12 ">
+		<label for="portalSeq" class="col-lg-2 col-sm-3 col-md-2 control-label">展示优先级</label>
+		<div class="col-lg-10 col-sm-9 col-md-10">
+			<input type="text" class=" editable creatable form-control" name="portalSeq" validate="{required:true,isNumber4:true,uniqueCheck:{url:'com.wboss.wcb.admin.theme.PortalThemeMemberSvc', method:'queryPortalThemeMember', params: ['portalTemplateId','tmpType']}, messages: {required:'请输入优先级',uniqueCheck:'优先级已存在，请重输',isNumber4:'只支持正整数'}}"/> 
+		</div>
+	</div>
+	<div>
+		<input type="hidden" name="portalTemplateId"/>
+	</div>
+	<div>
+		<input type="hidden" name="tmpType"/>
+	</div>
+	<div style="clear:both;"></div>
+</form>
+
+<style type="text/css">
+	.modal-dialog{
+		width:75%;
+	}
+	.modal-content{
+		width:1150px;
+	}
+</style>
