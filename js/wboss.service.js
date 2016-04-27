@@ -184,7 +184,7 @@ Service.prototype.call = function(method,args,successFunc,errorFunc){
             }
         }else if(this.status == 401){
             this.errorFunc('您还没有登录！\n\n'+((r||{}).res || ""),this);
-            location.href = "login.html";
+            location.href = "index.html";
         }else if(this.status == 403){
             this.errorFunc('没有权限！\n\n'+((r||{}).res || ""));
         }else{
