@@ -33,7 +33,7 @@ define(function() {
 			var jqGrid = 
 				$table.jqGrid(
 							{
-								url : '/data/com.wboss.general.task.TaskTimingCfgSvc?m=qryTaskTimingInfoJq.object.object',
+								url : wboss.getWay + '/data/com.wboss.general.task.TaskTimingCfgSvc?m=qryTaskTimingInfoJq.object.object',
 								colModel : [
 								            {name : 'taskId',hidden:true}, 
 								            {label : '任务名称',name : 'taskName'}, 

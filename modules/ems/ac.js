@@ -60,7 +60,7 @@ function onCreate($page,$relativeUrl){
 	});
 	var validator = $form.validate();
 	var jqGrid = $table.jqGrid({
-	    url: '/data/com.wboss.wcb.auth.authmgr.AcSvc?m=queryAcList.object.object',
+	    url: wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.AcSvc?m=queryAcList.object.object',
 	    colModel: [
 	   	        { label: 'AC标识', name: 'acId',width: 200 ,hidden:true},
 	   	        { label: 'AC名称', name: 'acName',width: 200},

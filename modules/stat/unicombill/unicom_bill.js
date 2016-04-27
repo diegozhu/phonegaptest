@@ -35,7 +35,7 @@ define(function (){
 		
 		var $table = $page.find("#unicom_bill_Province");
 		var jqGrid=$table.jqGrid({
-			 url: $page.reqUrl +'/data/com.wboss.report.unicombill.UnicomBillReportSvc?m=queryPrivince.object.object',
+			 url: $page.reqUrl +wboss.getWay + '/data/com.wboss.report.unicombill.UnicomBillReportSvc?m=queryPrivince.object.object',
 			 datatype: 'local',
 			 colNames: ['省','出账用户数','无出账用户数','当月开户无出帐用户','出账用户数','无出账用户数','有出账系统无记录用户'],
 			 recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
@@ -77,7 +77,7 @@ define(function (){
 		
 		
 		var jqGroupCity=$("#unicom_bill_city").jqGrid({
-			 url: $page.reqUrl + '/data/com.wboss.report.unicombill.UnicomBillReportSvc?m=queryCity.object.object',
+			 url: $page.reqUrl + wboss.getWay + '/data/com.wboss.report.unicombill.UnicomBillReportSvc?m=queryCity.object.object',
 			 datatype : 'local',
 			 recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 			 colNames: ['市','出账用户数','无出账用户数','当月开户无出帐用户','出账用户数','无出账用户数','有出账系统无记录用户'],

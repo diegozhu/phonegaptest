@@ -49,7 +49,7 @@ function onCreate($page, $relativeUrl){
 		});
 	
 	var jqGrid = $table.jqGrid({
-	    url: $page.reqUrl+'/data/com.wboss.report.activeuser.ActiveUserStatSvc?m=queryProvinceJqGrid.object.object',
+	    url: $page.reqUrl+wboss.getWay + '/data/com.wboss.report.activeuser.ActiveUserStatSvc?m=queryProvinceJqGrid.object.object',
 	    datatype:'local',
 	    recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 	    colNames: ['','省','日活跃用户','月活跃用户','周活跃用户'],
@@ -78,7 +78,7 @@ function onCreate($page, $relativeUrl){
 	});
 
 var jqGrid2 = $table2.jqGrid({
-    url: $page.reqUrl+'/data/com.wboss.report.activeuser.ActiveUserStatSvc?m=queryCityJqGrid.object.object',
+    url: $page.reqUrl+wboss.getWay + '/data/com.wboss.report.activeuser.ActiveUserStatSvc?m=queryCityJqGrid.object.object',
     datatype:'local',
     recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
     colNames: ['市', '日活跃用户','月活跃用户','周活跃用户'],

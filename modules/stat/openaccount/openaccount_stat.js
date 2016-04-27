@@ -10,7 +10,7 @@ define(function(){
 		var jqParentGrid = $page.find("#openaccount_parentRegion_dataTable")
 		.jqGrid(
 				{
-					url : $page.reqUrl +'/data/com.wboss.report.openaccount.OpenAccountSvc?m=queryProvinceJq.object.object',
+					url : $page.reqUrl +wboss.getWay + '/data/com.wboss.report.openaccount.OpenAccountSvc?m=queryProvinceJq.object.object',
 					recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 					datatype:'local',
 					shrinkToFit:IsPC(),
@@ -38,7 +38,7 @@ define(function(){
 		var jqGrid = $page.find("#openaccount_childRegion_dataTable")
 		.jqGrid(
 				{
-					url : $page.reqUrl + '/data/com.wboss.report.openaccount.OpenAccountSvc?m=queryOpenAccountJq.object.object',
+					url : $page.reqUrl + wboss.getWay + '/data/com.wboss.report.openaccount.OpenAccountSvc?m=queryOpenAccountJq.object.object',
 					recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 				    datatype:'local',
 					shrinkToFit:IsPC(),

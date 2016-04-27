@@ -67,7 +67,7 @@ define(function (){
 		})
 		
 		var jqGrid = $table.jqGrid({
-			url : '/data/com.wboss.wcb.report.ApLoadReportSvc?m=queryAploadStatList.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.report.ApLoadReportSvc?m=queryAploadStatList.object.object',
 			postData : {param:JSON.stringify({vnoId:vnoId,isBySubVno:'true',date:$begin.val(),endDate:$end.val(),statByUnitTime:'true'})},
 			colModel : [{label : 'APMac',name : 'apMac',sortable:false},
 			            {label : 'Ap名称',name : 'apName',sortable:false},

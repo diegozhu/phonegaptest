@@ -83,7 +83,7 @@ define(function() {
 		});
 		
 		var jqGrid = $table.jqGrid({
-					url : '/data/com.wboss.wcb.auth.authmgr.ApSvc?m=queryApVoList.object.object',
+					url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.ApSvc?m=queryApVoList.object.object',
 					colModel : [ {
 						name : 'apId',
 						hidden : true

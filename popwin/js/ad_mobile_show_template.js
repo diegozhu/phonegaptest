@@ -136,7 +136,7 @@ define(function () {
 			}
 		});
 		self.jqGrid = $table.jqGrid({
-			url : '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=queryAdMobileShowTemplateList4Jq.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=queryAdMobileShowTemplateList4Jq.object.object',
 			colModel : [{name : 'showTemplateId',hidden:true},
 			            {label : '页面名称',name : 'templateName'},
 			            {label : '展现模式',name : 'showMode',

@@ -60,7 +60,7 @@ define(function() {
 		});
 		
 		jqGrid = $table.jqGrid({
-							url : '/data/com.wboss.wcb.rating.onlineuser.OnlineUserSvc?m=queryOnlineUserList4Jq.object.object',
+							url : wboss.getWay + '/data/com.wboss.wcb.rating.onlineuser.OnlineUserSvc?m=queryOnlineUserList4Jq.object.object',
 							postData : {param:JSON.stringify({status:'30A',vnoId:vnoId})},
 							colModel : [{name : "custId",hidden:true},
 							            {label : '客户编码',name : 'custCode'},

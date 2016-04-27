@@ -38,7 +38,7 @@ define(function() {
 			var jqGrid = $("#ems_alarm_to_staff_dataTable")
 					.jqGrid(
 							{
-								url : '/data/com.wboss.iom.monitor.AlarmToStaffSvc?m=queryAlarmListJq.object.object',
+								url : wboss.getWay + '/data/com.wboss.iom.monitor.AlarmToStaffSvc?m=queryAlarmListJq.object.object',
 								colModel : [ 
 								{label : '',name : 'toStaffId',hidden:true},
 							    {label : '',name : 'staffId',hidden:true},

@@ -74,7 +74,7 @@ define(function () {
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		
 		self.$grid = $("#ad_position_dataTable").jqGrid({
-			url :'/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=jqueryAdPositionVoList.object.object',
+			url :wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=jqueryAdPositionVoList.object.object',
 		    colModel: [
 		        {name : 'adPositionId',key:true,hidden:true},
 				{label : '广告位名称',name : 'adPositionName'}, 

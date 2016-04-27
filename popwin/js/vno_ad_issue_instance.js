@@ -158,7 +158,7 @@ define(function() {
 		self.$grid = $("#vno_ad_dataTable")
 				.jqGrid(
 						{
-							url : '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=qryVnoAdIssueInstanceByJq.object.object',
+							url : wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=qryVnoAdIssueInstanceByJq.object.object',
 							datatype : 'local',
 							colModel : [ {
 								name : 'issueInstanceId',

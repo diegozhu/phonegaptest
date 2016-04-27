@@ -68,7 +68,7 @@ define(function () {
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		var TYPE_OBJ ={};
 		self.$grid = $("#protal_acc_policy_dataTable").jqGrid({
-		    url: '/data/com.wboss.wcb.auth.authmgr.PortalAccPolicySvc?m=queryPortalAccPolicy.object.object',
+		    url: wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.PortalAccPolicySvc?m=queryPortalAccPolicy.object.object',
 		    colModel: [
 		                { label: '访问策略标识', name: 'portalAccPolicyId',key:true,hidden:true },
 			   	        { label: '策略名称', name: 'policyName',width: 100},

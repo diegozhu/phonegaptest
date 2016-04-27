@@ -39,7 +39,7 @@ define(function() {
 			var $table = $("#ems_vlan_dataTable");
 			var jqGrid = $table
 					.jqGrid({
-						url : '/data/com.wboss.wcb.auth.authmgr.VlanSvc?m=qryVlanInfoJq.object.object',
+						url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.VlanSvc?m=qryVlanInfoJq.object.object',
 						colModel : [
 								{name : 'vlanId',hidden : true},
 								{name : 'accObjId',hidden:true},

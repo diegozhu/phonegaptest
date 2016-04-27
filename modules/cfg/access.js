@@ -49,7 +49,7 @@ define(function () {
 		});
 		
 		var jqGrid = $table.jqGrid({
-		    url: '/data/com.wboss.wcb.rating.config.AccessCfgSvc?m=queryAllAccessInfoByJq.object.object',
+		    url: wboss.getWay + '/data/com.wboss.wcb.rating.config.AccessCfgSvc?m=queryAllAccessInfoByJq.object.object',
 		    colModel: [
 		        { name: 'accessId', hidden:true},
 		        { label: '授权模板名称', name: 'accessName'},
@@ -90,7 +90,7 @@ define(function () {
 		});
 		
 		detailGrid = $('#cfg_access_detail_dataTable').jqGrid({
-			url: '/data/com.wboss.wcb.rating.config.AccessRuleCfgSvc?m=queryAccessDetailRuleList.object.object',
+			url: wboss.getWay + '/data/com.wboss.wcb.rating.config.AccessRuleCfgSvc?m=queryAccessDetailRuleList.object.object',
 		    colModel: [
 		    	{ label: '', name: 'detailRuleId', hidden: true, key: true},
 		    	{ label: '规则名称', name: 'detailRuleName'},

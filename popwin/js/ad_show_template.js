@@ -151,7 +151,7 @@ define(function () {
 		//校验
 		var validator=$form.validate();
 		self.jqGrid = $table.jqGrid({
-			url : '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=queryAdShowTemplateList4Jq.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=queryAdShowTemplateList4Jq.object.object',
 			datatype: 'local',
 			colModel : [{name : 'showTemplateId',hidden:true},
 			            {label : '页面名称',name : 'templateName'},

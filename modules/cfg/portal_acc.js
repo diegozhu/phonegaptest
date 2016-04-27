@@ -36,7 +36,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var jqGrid = $table.jqGrid({
-	    url: '/data/com.wboss.wcb.auth.authmgr.PortalAccPolicySvc?m=queryPortalAccPolicy.object.object',
+	    url: wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.PortalAccPolicySvc?m=queryPortalAccPolicy.object.object',
 	    colModel: [
 	   	        { label: '访问策略标识', name: 'portalAccPolicyId',width: 200,hidden:true },
 	   	        { label: '策略名称', name: 'policyName',width: 100},

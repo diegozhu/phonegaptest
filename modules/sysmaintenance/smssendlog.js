@@ -13,7 +13,7 @@ define(function() {
 			var jqGrid = $("#sysmaintenance_smssendlog_dataTable")
 					.jqGrid(
 							{
-								url : '/data/com.wboss.wcb.auth.authmgr.SMSSendLogSvc?m=querySmsSendLogList.object.object',
+								url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.SMSSendLogSvc?m=querySmsSendLogList.object.object',
 								postData :{param:JSON.stringify({sendDate:$page.find("input[name='sendDate']").val()})},
 								colModel : [ 
 								    {label : '发送标识',name : 'smsId',hidden : true,key : true}, 
@@ -30,7 +30,7 @@ define(function() {
 			var jqGroupGrid = $("#sysmaintenance_smssendlog_groupDataTable")
 					.jqGrid(
 							{
-								url : '/data/com.wboss.wcb.auth.authmgr.SMSSendLogSvc?m=queryLogCountGroup.object.object',
+								url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.SMSSendLogSvc?m=queryLogCountGroup.object.object',
 								postData :{param:JSON.stringify({sendDate:$page.find("input[name='sendDate']").val()})},
 								colModel : [
 								            {label : '发送时间',name : 'gdate'}, 

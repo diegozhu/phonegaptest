@@ -59,7 +59,7 @@ define(function () {
 		//富文本编辑器初始化
 		var editor;
 		self.jqGrid = $("#ad_position_dataTable").jqGrid({
-			url :'/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=qryAdFixedPositionByJq.object.object',
+			url :wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=qryAdFixedPositionByJq.object.object',
 			datatype:'local',
 		    colModel: [
 		        {label : '',name : 'adPositionId',hidden:true},
@@ -236,7 +236,7 @@ define(function () {
 				});
 		
 		jqGridContent = $tableContent.jqGrid({
-			url : '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=qryAdInstanceByJqGrid.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=qryAdInstanceByJqGrid.object.object',
 			datatype: 'local',
 			colModel : [
 					{name : 'adInstanceId',hidden : true},

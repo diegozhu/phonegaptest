@@ -34,7 +34,7 @@ define(function(){
     	
     	var $table=$('#cust_rescard_log_dataTable');
     	var  jqGrid = $table.jqGrid({
-		    url : '/data/com.wboss.wcb.custmgr.ReschargeCardLogSvc?m=queryRechargeCardLogList.object.object',
+		    url : wboss.getWay + '/data/com.wboss.wcb.custmgr.ReschargeCardLogSvc?m=queryRechargeCardLogList.object.object',
 		    postData:{param:JSON.stringify({beginDate:beginDate.val(),endDate:endDate.val(),vnoId:vnoId})},
 			colModel: [
 			        { label: '充值卡充值流水号', name: 'rechargeLogId'},

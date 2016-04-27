@@ -75,7 +75,7 @@ define(function () {
 		});
 		
 		self.$grid = $("#authen_dataTable").jqGrid({
-			url :'/data/com.wboss.wcb.auth.authmgr.AuthenticationSvc?m=queryAllAuthenticationList4Jq.object.object',
+			url :wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.AuthenticationSvc?m=queryAllAuthenticationList4Jq.object.object',
 		    colModel: [
 		            	{label : '鉴权策略标识',name : 'authenId',hidden:true,key:true},
 		               	{label : '鉴权策略名称',name : 'authenName'},

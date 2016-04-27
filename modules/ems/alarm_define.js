@@ -28,7 +28,7 @@ define(function() {
 			});
 			
 			var jqGrid = $table.jqGrid({
-								url :'/data/com.wboss.iom.monitor.MonitorInfoDefineSvc?m=queryMonitorInfoDefineListJq.object.object',
+								url :wboss.getWay + '/data/com.wboss.iom.monitor.MonitorInfoDefineSvc?m=queryMonitorInfoDefineListJq.object.object',
 								colModel :
 									[ 
 									  {label : '监控信息编码',name : 'infoDefineCode'},

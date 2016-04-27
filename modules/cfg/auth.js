@@ -78,7 +78,7 @@ define(function (){
 			});
 		
 		var jqGrid = $table.jqGrid({
-			url : '/data/com.wboss.wcb.auth.authmgr.AuthSvc?m=queryAllAuthenticationList4Jq.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.AuthSvc?m=queryAllAuthenticationList4Jq.object.object',
 			colModel : [{label : '鉴权策略标识',name : 'authenId',hidden:true},
 			            {label : '鉴权策略名称',name : 'authenName'},
 			            {label : '用户密码效验类型',name : '_upVerifyType'},

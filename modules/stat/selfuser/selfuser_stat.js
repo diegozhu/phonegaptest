@@ -7,7 +7,7 @@ define(function (){
 		$page.find(".btn-report-export").prop('disabled', true);
 
 		var jqGrid = $table.jqGrid({
-			url :$page.reqUrl+'/data/com.wboss.report.selfuserstat.SelfUserStatReportSvc?m=selfuserStatisticsList4Jq.object.object',
+			url :$page.reqUrl+wboss.getWay + '/data/com.wboss.report.selfuserstat.SelfUserStatReportSvc?m=selfuserStatisticsList4Jq.object.object',
 			datatype : 'local',
 			shrinkToFit:IsPC(),
 			recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",

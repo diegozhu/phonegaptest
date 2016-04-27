@@ -53,7 +53,7 @@ define(function() {
 		var $table = $("#sysmaintenance_userreq_dataTable");
 		var jqGrid = $table
 				.jqGrid({
-					url : '/data/com.wboss.wcb.auth.authmgr.UserReqResultSvc?m=queryUserReqList4Jq.object.object',
+					url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.UserReqResultSvc?m=queryUserReqList4Jq.object.object',
 					postData : {param:JSON.stringify({beginDate:stratTime,endDate:endTime,vnoId:vnoId})},
 					colModel : [
 							{label : '客户编码' ,name:'custCode'},

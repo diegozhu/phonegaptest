@@ -72,7 +72,7 @@ define(function () {
 		var $form = $(".popwin_product_offer").find(".detail_form");
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		self.$grid = $("#product_offer_dataTable").jqGrid({
-			url : '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferList.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferList.object.object',
 			//多选
 			multiselect: true,
 		    colModel: [

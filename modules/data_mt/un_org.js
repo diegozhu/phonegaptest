@@ -45,7 +45,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var jqGrid = $table.jqGrid({
-	    url: '/data/com.wboss.wcb.unicom.UnicomOrgSvc?m=queryForJqGrid.object.object',
+	    url: wboss.getWay + '/data/com.wboss.wcb.unicom.UnicomOrgSvc?m=queryForJqGrid.object.object',
 	    colModel: [
 	   	        { label: '编号', name: 'unicomOrgId',width: 200},
 { label: '名称', name: 'orgName',width: 200},

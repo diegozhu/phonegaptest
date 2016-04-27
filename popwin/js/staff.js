@@ -68,7 +68,7 @@ define(function () {
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		var TYPE_OBJ ={};	
 		self.$grid = $("#staff_dataTable").jqGrid({
-			url : '/data/com.wboss.general.staff.StaffSvc?m=queryStaffList4Jq.object.object',
+			url : wboss.getWay + '/data/com.wboss.general.staff.StaffSvc?m=queryStaffList4Jq.object.object',
 		    colModel: [
 		    {label : '员工编码',name : 'staffId',key:true,hidden : true},
 			{label : '员工工号',name : 'staffCode'},

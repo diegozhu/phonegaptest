@@ -60,7 +60,7 @@ function onCreate($page,$relativeUrl){
 	//校验
 	var validator = $form.validate();
 	var jqGrid = $table.jqGrid({
-	    url: '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferList.object.object',
+	    url: wboss.getWay + '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferList.object.object',
 	    colModel: [
 	            { label: '商品编码', name: 'offerCode',width: 100},
 	            { label: '商品ID', name: 'offerId',width: 100,hidden:true},

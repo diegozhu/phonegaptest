@@ -69,7 +69,7 @@ define(function () {
 		var TYPE_OBJ ={'00A':'有效','00X':'无效','00U':'归档'};
 		
 		self.$grid = $("#access_dataTable").jqGrid({
-			url :'/data/com.wboss.wcb.rating.config.AccessCfgSvc?m=queryAllAccessInfoByJq.object.object',
+			url :wboss.getWay + '/data/com.wboss.wcb.rating.config.AccessCfgSvc?m=queryAllAccessInfoByJq.object.object',
 		    colModel: [
 		        { label : '授权模版编号',name : 'accessId', hidden:true,key:true},
 				{ label : '授权模版名称',name : 'accessName'}, 

@@ -69,7 +69,7 @@ define(function () {
 		var TYPE_OBJ ={};
 		
 		self.$grid = $("#alarm_define_dataTable").jqGrid({
-			url :'/data/com.wboss.iom.monitor.MonitorInfoDefineSvc?m=queryMonitorInfoDefineListJq.object.object',
+			url :wboss.getWay + '/data/com.wboss.iom.monitor.MonitorInfoDefineSvc?m=queryMonitorInfoDefineListJq.object.object',
 		    colModel: [
 		        {label : '监控信息编码',name : 'infoDefineCode',key:true},
 				{label : '监控信息名称',name : 'infoDefineName'}, 

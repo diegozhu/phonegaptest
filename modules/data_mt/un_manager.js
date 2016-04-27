@@ -45,7 +45,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var jqGrid = $table.jqGrid({
-	    url: '/data/com.wboss.wcb.unicom.UnicomMarketMangerSvc?m=queryForJqGrid.object.object',
+	    url: wboss.getWay + '/data/com.wboss.wcb.unicom.UnicomMarketMangerSvc?m=queryForJqGrid.object.object',
 	    colModel: [
 	   	        { label: '经理ID', name: 'unicomMktMangerId',width: 200},
 				{ label: '公司ID', name: 'unicomOrgId',width: 200,hidden:true},

@@ -69,7 +69,7 @@ define(function() {
 					});
 			var jqGrid = $table
 					.jqGrid({
-						url : '/data/com.wboss.wcb.admin.ad.AdGetPolicySvc?m=queryAdGetPolicyListJq.object.object',
+						url : wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdGetPolicySvc?m=queryAdGetPolicyListJq.object.object',
 						colModel : [
 								{name : 'getPolicyId',hidden : true},
 								{label : '广告策略名称',name : 'policyName'},
@@ -253,7 +253,7 @@ define(function() {
 					});
 			jqGridContent = $tableContent
 			.jqGrid({
-				url : '/data/com.wboss.wcb.admin.ad.AdGetPolictyContentSvc?m=queryAdPolicyContentListJq.object.object',
+				url : wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdGetPolictyContentSvc?m=queryAdPolicyContentListJq.object.object',
 				colModel : [
 						{name : 'policyContentId',hidden : true},
 						{name : 'getPolicyId',hidden:true},

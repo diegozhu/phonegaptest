@@ -42,7 +42,7 @@ define(function() {
 			
 
 			var jqGrid = $table.jqGrid({
-								url :'/data/com.wboss.wcb.auth.authmgr.SsidSvc?m=querySsidListJq.object.object',
+								url :wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.SsidSvc?m=querySsidListJq.object.object',
 								colModel :
 									[ 
 									  {label : '',name : 'ssidId',hidden:true},

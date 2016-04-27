@@ -12,7 +12,7 @@ function onCreate($page,$relativeUrl){
 	//var isSelected = false;
 	
 	var jqGrid = $table.jqGrid({
-	    url: '/data/data/com.wboss.wcb.custmgr.BatchBusiRequestSvc?m=queryBatchBusiRequestList.object.object',
+	    url: wboss.getWay + '/data/data/com.wboss.wcb.custmgr.BatchBusiRequestSvc?m=queryBatchBusiRequestList.object.object',
 	    colModel: [
 	   	        { label: '批量任务实例标识', name: 'batchNo'},
 	   	        { label: '批量业务类型', name: 'batchBusinessName'},
@@ -91,7 +91,7 @@ function onCreate($page,$relativeUrl){
 	
 	
 	var jqGroupGridCount = $("#cust_bat_query_groupDataTable").jqGrid({
-	    url: '/data/data/com.wboss.wcb.custmgr.BatchBusiRequestSvc?m=queryCount.object.object',
+	    url: wboss.getWay + '/data/data/com.wboss.wcb.custmgr.BatchBusiRequestSvc?m=queryCount.object.object',
 	    datatype: 'local',
 	    colModel: [
 	   	        { label: '总数', name: 'total'},
@@ -128,7 +128,7 @@ function onCreate($page,$relativeUrl){
 	
 	
 	var jqGroupGridTemp = $("#bat_query_dataTable").jqGrid({
-	    url: '/data/com.wboss.wcb.auth.authmgr.BatchBusiRequestDetailSvc?m=queryBatchBusiRequestDetail.object.object',
+	    url: wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.BatchBusiRequestDetailSvc?m=queryBatchBusiRequestDetail.object.object',
 	    //首次不加载
 	    datatype: 'local',
 	    //复选框属性

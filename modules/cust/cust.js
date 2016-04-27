@@ -26,7 +26,7 @@ define(function() {
 		var vnoId=$page.find('input[name="vnoId"]').val();
 		
 		var jqGrid = $table.jqGrid({
-					url : '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryAllProductOfferInstance.object.object',
+					url : wboss.getWay + '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryAllProductOfferInstance.object.object',
 					postData : {param:JSON.stringify({vnoId: vnoId})},
 					multiselect : true,
 					recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",

@@ -21,7 +21,7 @@ define(function(){
 	   		//客户详细信息
 			var jqGrid = $360cust_table.jqGrid({
 				datatype:'local',
-						url : '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryCustInfoList4Jq.object.object',
+						url : wboss.getWay + '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryCustInfoList4Jq.object.object',
 						colModel : [ 
 						   	   {label : '客户ID',name : 'custId',width:100,hidden : true},
 						   	   {label : '客户账号',name : 'custCode',width : 100},
@@ -100,7 +100,7 @@ define(function(){
 		
 		//订购实例列表
 		  var  product_offer_instance_Grid = $('#cust_productOfferIns_ProductOfferInstancedataTable').jqGrid({
-			  url : '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferInstance.object.object',
+			  url : wboss.getWay + '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferInstance.object.object',
 				colModel: [
 				        { label: '订购实例标识', name: 'productOfferInstanceId', key: true},
 				        { label: '商品', name: 'offerName'},
@@ -193,7 +193,7 @@ define(function(){
 		
 		//商品列表
 		var jqGridProduct = $table.jqGrid({
-					url : '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryAllProductOfferInstance.object.object',
+					url : wboss.getWay + '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryAllProductOfferInstance.object.object',
 					multiselect : true,
 					postData : {param:JSON.stringify({vnoId: custdetail ? custdetail.vnoId : 0})},
 					recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",

@@ -75,7 +75,7 @@ define(function () {
 		var $form = $(".popwin_ap").find(".detail_form");
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		self.$grid = $("#ap_dataTable").jqGrid({
-			url : '/data/com.wboss.wcb.auth.authmgr.ApSvc?m=queryApVoList.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.ApSvc?m=queryApVoList.object.object',
 			//多选
 			multiselect: true,
 		    colModel: [{name : 'apId',hidden : true,key:true}, 

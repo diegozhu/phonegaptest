@@ -67,7 +67,7 @@ define(function () {
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		
 		self.$grid = $("#portal_acc_dataTable").jqGrid({
-			url : '/data/com.wboss.wcb.admin.theme.PortalThemeSvc?m=findPortalThemeName.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.admin.theme.PortalThemeSvc?m=findPortalThemeName.object.object',
 		    colModel: [
 		    {label : '主题标识',name : 'portalThemeId',key:true,hidden : true},
 			{label : '主题名称',name : 'portalThemeName'},

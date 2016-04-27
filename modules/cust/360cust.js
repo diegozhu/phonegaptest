@@ -37,7 +37,7 @@ define(function() {
 
    		//客户详细信息
 		var jqGrid = $table.jqGrid({
-					url : '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryCustInfoList4Jq.object.object',
+					url : wboss.getWay + '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryCustInfoList4Jq.object.object',
 					datatype : 'local',  //禁止自动查询
 					shrinkToFit:IsPC(),
 					colModel : [ 
@@ -143,7 +143,7 @@ define(function() {
 		
 		//商品订购信息
 		var  productOfferInstanceGrid = $('#cust_360cust_ProductOfferInstancedataTable').jqGrid({
-				url : '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferInstance.object.object',
+				url : wboss.getWay + '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferInstance.object.object',
 				shrinkToFit:IsPC(),
 				colModel: [
 				        { label: '商品订购实例标识', name: 'productOfferInstanceId', key: true},
@@ -168,7 +168,7 @@ define(function() {
 		  
 		  //登录鉴权绑定设备信息
 		  var  authBindObjectGrid = $('#cust_360cust_authBindObjectdataTable').jqGrid({
-				url : '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryAuthBindObject.object.object',
+				url : wboss.getWay + '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryAuthBindObject.object.object',
 				shrinkToFit:IsPC(),
 				colModel: [
 				        { label: '绑定设备实例标识', name: 'bindObjectId',hidden: true},
@@ -194,7 +194,7 @@ define(function() {
 		  
 		  //修改登录鉴权绑定设备信息
 		  var  modifyAuthBindObjectGrid = $('#cust_360cust_modifyAuthBindObjectdataTable').jqGrid({
-				url : '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryAuthBindObject.object.object',
+				url : wboss.getWay + '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryAuthBindObject.object.object',
 				shrinkToFit:IsPC(),
 				colModel: [
 				        { label: '绑定设备实例标识', name: 'bindObjectId',hidden: true},
@@ -232,7 +232,7 @@ define(function() {
 		  
 		  //余额收支记录
 //		  var  balanceOperLogGrid = $('#cust_360cust_balanceOperLogdataTable').jqGrid({
-//			  url : '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryBalanceOperLogByCustID.object.object',
+//			  url : wboss.getWay + '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryBalanceOperLogByCustID.object.object',
 //				colModel: [
 //				        { label: '余额收支记录标识', name: 'balanceOperLogId',width:60},
 //				        { label: '金额', name: 'amount',width:30},
@@ -281,7 +281,7 @@ define(function() {
 		  
 		  //订单记录
 		  var  orderLogGrid = $('#cust_360cust_orderLogdataTable').jqGrid({
-			    url : '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryOrderLogPoByCustID.object.object',
+			    url : wboss.getWay + '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryOrderLogPoByCustID.object.object',
 			    shrinkToFit:IsPC(),
 				colModel: [
 				        { label: '订单标识', name: 'orderId',sortable : false},
@@ -318,7 +318,7 @@ define(function() {
 		  
 		  //卡密充值日志
 		  var  RechargeCardLogGrid = $('#recharge_card_log_orderLogdataTable').jqGrid({
-			    url : '/data/com.wboss.wcb.custmgr.ReschargeCardLogSvc?m=queryRechargeCardLogList.object.object',
+			    url : wboss.getWay + '/data/com.wboss.wcb.custmgr.ReschargeCardLogSvc?m=queryRechargeCardLogList.object.object',
 			    datatype : 'local',  //禁止自动查询
 			    shrinkToFit:IsPC(),
 				colModel: [
@@ -345,7 +345,7 @@ define(function() {
 		//第三方订购记录
 			var ThdPaymentOrderLogGrid = $('#recharge_thd_log_orderLogdataTable').jqGrid({
 				        datatype : 'local',  //禁止自动查询
-						url : '/data/com.wboss.wcb.thdpaymentlog.ThdPaymentOrderLogSvc?m=queryForJqGridcopy.object.object',
+						url : wboss.getWay + '/data/com.wboss.wcb.thdpaymentlog.ThdPaymentOrderLogSvc?m=queryForJqGridcopy.object.object',
 						shrinkToFit:IsPC(),
 						colModel : [ {
 							label : '支付订购记录',
@@ -438,7 +438,7 @@ define(function() {
 					});
 			//网上用户
 			var UserReqResultLogGrid = $("#recharge_userreq_orderLogdataTable").jqGrid({
-						url : '/data/com.wboss.wcb.auth.authmgr.UserReqResultSvc?m=queryUserReqList4Jqcopy.object.object',
+						url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.UserReqResultSvc?m=queryUserReqList4Jqcopy.object.object',
 						shrinkToFit:IsPC(),
 						datatype : 'local',  //禁止自动查询
 						colModel : [

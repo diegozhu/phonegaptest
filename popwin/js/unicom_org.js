@@ -80,7 +80,7 @@ define(function () {
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		
 		self.$grid = $("#popwin_unicom_org_dataTable").jqGrid({
-			url :'/data/com.wboss.wcb.unicom.UnicomOrgSvc?m=queryForJqGrid.object.object',
+			url :wboss.getWay + '/data/com.wboss.wcb.unicom.UnicomOrgSvc?m=queryForJqGrid.object.object',
 			//多选
 			//multiselect: true,
 		    colModel: [

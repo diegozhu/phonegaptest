@@ -76,7 +76,7 @@ define(function () {
 		var TYPE_OBJ ={'00A':'有效','00X':'无效','00U':'归档'};
 		var $from = $(".popwin_ad_policy").find(".from");
 		self.$grid = $("#ad_policy_dataTable").jqGrid({
-			url :'/data/com.wboss.wcb.admin.ad.AdGetPolicySvc?m=queryAdGetPolicyListJq.object.object',
+			url :wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdGetPolicySvc?m=queryAdGetPolicyListJq.object.object',
 			colModel : [
 						{name : 'getPolicyId',hidden:true,key:true},
 						{label : '广告策略名称',name : 'policyName'},

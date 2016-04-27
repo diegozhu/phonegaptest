@@ -36,7 +36,7 @@ define(function (){
 		    
 		var $table=$("#user_srecharge_province");
 		var jqGroupProvince=$table.jqGrid({
-			 url: $page.reqUrl + '/data/com.wboss.report.usersrecharge.UserSrechargeReportSvc?m=queryProvince.object.object',
+			 url: $page.reqUrl + wboss.getWay + '/data/com.wboss.report.usersrecharge.UserSrechargeReportSvc?m=queryProvince.object.object',
 			 datatype: 'local',
 			 recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 			 colNames: ['省','支付宝充值笔数','支付宝充值应收(元)','支付宝充值实收(元)','支付宝实收占比','卡密充值笔数','卡密充值应收(元)','卡密充值实收(元)','卡密实收占比'],
@@ -77,7 +77,7 @@ define(function (){
 	
 	
 		var jqGroupCity=$("#user_srecharge_city").jqGrid({
-			 url: $page.reqUrl + '/data/com.wboss.report.usersrecharge.UserSrechargeReportSvc?m=queryCity.object.object',
+			 url: $page.reqUrl + wboss.getWay + '/data/com.wboss.report.usersrecharge.UserSrechargeReportSvc?m=queryCity.object.object',
 			 datatype: 'local',
 			 recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 			 colNames: ['市','支付宝充值笔数','支付宝充值应收(元)','支付宝充值实收(元)','支付宝实收占比','卡密充值笔数','卡密充值应收(元)','卡密充值实收(元)','卡密实收占比'],

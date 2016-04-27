@@ -15,7 +15,7 @@ define(function() {
 		
    		//卡号详细信息
    		var  cardMgrGrid = $('#card__card_mgr_dataTable').jqGrid({
-   			url : '/data/com.wboss.wcb.cardinfo.CardInfoSvc?m=queryCardInfoList4Jq.object.object',
+   			url : wboss.getWay + '/data/com.wboss.wcb.cardinfo.CardInfoSvc?m=queryCardInfoList4Jq.object.object',
    		    multiselect: true,
    		    colModel: [
                 { label: '多个卡号', name: 'cardNos',sortable : false,hidden:true},

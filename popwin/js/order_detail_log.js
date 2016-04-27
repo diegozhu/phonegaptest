@@ -69,7 +69,7 @@ define(function () {
 			$page.find(".ruleType").append(dom);
 		});
 		self.jqGrid = $table.jqGrid({
-			url : '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryOrderDetailLogPoByOrderID.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.custinfo.CustInfoQuerySvc?m=queryOrderDetailLogPoByOrderID.object.object',
 			datatype: 'local',
 			autowidth:true,
 			colModel : [

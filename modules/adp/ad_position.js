@@ -139,7 +139,7 @@ define(function (){
 			});
 		
 		var jqGrid = $table.jqGrid({
-			url : '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=queryAdPostiionList4Jq.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=queryAdPostiionList4Jq.object.object',
 			colModel : [{name : 'adPositionId',hidden:true},
 			            {label : '广告位名称',name : 'adPositionName'},
 			            {label : '广告位类型',name : '_adPositionType'},

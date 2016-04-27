@@ -27,7 +27,7 @@ function onCreate($page, $relativeUrl) {
 	});
     
     $("#cust_thd_log_dataTable").jqGrid({
-        url : '/data/com.wboss.wcb.thdpaymentlog.ThdPaymentOrderLogSvc?m=queryForJqGrid.object.object',
+        url : wboss.getWay + '/data/com.wboss.wcb.thdpaymentlog.ThdPaymentOrderLogSvc?m=queryForJqGrid.object.object',
         postData:{param:JSON.stringify({beginDate:beginDate.val(),endDate:endDate.val(),vnoId:vnoId})},
         colModel : [ { label : '支付订购记录', name : 'paymentOrderId', hidden:true },
                      { label : '客户名称', name : 'custName'},

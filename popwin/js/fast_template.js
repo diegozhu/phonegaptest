@@ -75,7 +75,7 @@ define(function () {
 		});
 		
 		self.$grid = $("#fast_template_dataTable").jqGrid({
-			url :'/data/com.wboss.wcb.custmgr.FastCustTemplateSvc?m=queryFastCustTemplate.object.object',
+			url :wboss.getWay + '/data/com.wboss.wcb.custmgr.FastCustTemplateSvc?m=queryFastCustTemplate.object.object',
 		    colModel: [
 		               { label: '模板标识', name: 'custTemplateId',hidden:true,key:true},
 			   	        { label: '模板名称', name: 'custTemplateName',width: 200},

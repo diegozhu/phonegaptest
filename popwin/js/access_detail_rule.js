@@ -258,7 +258,7 @@ define(function () {
 		});
 		
 		self.jqGrid = $table.jqGrid({
-			url : '/data/com.wboss.wcb.rating.config.AccessDetailRuleCfgSvc?m=queryAccessDetailRuleList4Jq.object.object',
+			url : wboss.getWay + '/data/com.wboss.wcb.rating.config.AccessDetailRuleCfgSvc?m=queryAccessDetailRuleList4Jq.object.object',
 			height:'250px',
 			colModel : [{name : 'detailRuleId',hidden:true},
 			            {label : '规则名称',name : 'detailRuleName'},

@@ -79,7 +79,7 @@ define(function () {
 		});
 		
 		self.$grid = $("#time_span_dataTable").jqGrid({
-		    url: '/data/com.wboss.wcb.rating.config.TimeSpanCfgSvc?m=queryTimeSpanList4Jq.object.object',
+		    url: wboss.getWay + '/data/com.wboss.wcb.rating.config.TimeSpanCfgSvc?m=queryTimeSpanList4Jq.object.object',
 			//多选
 		//	multiselect: true,
 		    colModel: [

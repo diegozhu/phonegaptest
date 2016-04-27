@@ -1,7 +1,7 @@
 define(function() {
 function onCreate($page, $relativeUrl){
     $("#stat_userrequest_dataTable").jqGrid({
-        url : '/data/com.wboss.wcb.auth.authmgr.UserReqResultSvc?m=queryUserReqList4Jq2.object.object',
+        url : wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.UserReqResultSvc?m=queryUserReqList4Jq2.object.object',
         postData : {param:JSON.stringify($page.find('.search-form').serializeObject())},
         colModel : [
                 {label : 'SSID' ,name:'ssid',width : 260},

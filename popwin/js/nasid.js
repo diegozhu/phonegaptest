@@ -67,7 +67,7 @@ define(function () {
 		var self = this,$dialog = this.$dialog, $page = this.$page = $dialog.getModalBody();
 		var TYPE_OBJ ={};
 		self.$grid = $("#nasid_dataTable").jqGrid({
-		    url: '/data/com.wboss.wcb.admin.nasidmgr.NasidSvc?m=queryNasidListByJq.object.object',
+		    url: wboss.getWay + '/data/com.wboss.wcb.admin.nasidmgr.NasidSvc?m=queryNasidListByJq.object.object',
 		    colModel: [
 		               { label: 'nasId', name: 'nasidId',width: 200,hidden:true },
 			   	        { label: 'nasid', name: 'nasid',width: 100},

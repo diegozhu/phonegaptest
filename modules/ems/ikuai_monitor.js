@@ -159,7 +159,7 @@ define(function(){
 			var createDate=$ikForm.find("input[name='createDate']").val();
 			var $table1 = $("#ems_ikuai_monitor_dataTable");
 			var jqGrid = $table1.jqGrid({
-				url:'/data/com.wboss.iom.monitor.IkuaiMonitorInfoSvc?m=queryIKminfoVo4jList.object.object',
+				url:wboss.getWay + '/data/com.wboss.iom.monitor.IkuaiMonitorInfoSvc?m=queryIKminfoVo4jList.object.object',
 				postData:{param:JSON.stringify({createDate:createDate,vnoId:vnoId})},
 				colModel:[
 				          {name:'acId',hidden:true},
@@ -220,7 +220,7 @@ define(function(){
 			//获得初始日期
 			var date=$alForm.find("input[name='createDate']").val();
 			 var jqGrid2 = $table2.jqGrid({
-				url:'/data/com.wboss.iom.monitor.MonitorAlarmInfoSvc?m=queryMAIinfoVo4jList.object.object',
+				url:wboss.getWay + '/data/com.wboss.iom.monitor.MonitorAlarmInfoSvc?m=queryMAIinfoVo4jList.object.object',
 				postData:{param:JSON.stringify({createDate:date,vnoId:vnoId})},
 				colModel:[
 				          {name:'alarmInfoId',hidden:true},
@@ -324,7 +324,7 @@ define(function(){
 			var $table4 = $("#ems_ac_info_dataTable");
 			var cDate=$acForm.find("input[name='createDate']").val();
 			var jqGrid4 = $table4.jqGrid({
-		  		url:'/data/com.wboss.wcb.auth.authmgr.IkuaiAcSvc?m=jqIkuaiAcVoLsit.object.object',
+		  		url:wboss.getWay + '/data/com.wboss.wcb.auth.authmgr.IkuaiAcSvc?m=jqIkuaiAcVoLsit.object.object',
 		  		datatype:'json',
 		  		postData:{param:JSON.stringify({beginDate:cDate})},
 				colModel:[

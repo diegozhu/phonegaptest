@@ -143,7 +143,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var jqGrid = $("#privilege_staffmanage_dataTable").jqGrid({
-					url : '/data/com.wboss.general.staff.StaffSvc?m=queryStaffList4Jq.object.object',
+					url : wboss.getWay + '/data/com.wboss.general.staff.StaffSvc?m=queryStaffList4Jq.object.object',
 					colModel : [
 							{label : '员工编码', name : 'staffId', hidden : true },
 							{label : '员工账号', name : 'staffCode' },
@@ -195,7 +195,7 @@ function onCreate($page,$relativeUrl){
 	   });
 	   	
 		var  priGrid = $('#privilege_staffRoleDataTable').jqGrid({
-				url: '/data/com.wboss.general.staff.RoleSvc?m=queryRoleList4Jq.object.object',
+				url: wboss.getWay + '/data/com.wboss.general.staff.RoleSvc?m=queryRoleList4Jq.object.object',
 			    multiselect: true,
 			    colModel: [
 			        { label: '角色编码', name: 'roleId', key: true},
