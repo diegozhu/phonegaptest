@@ -16,10 +16,8 @@
  * */
 var I18n = {};
 var wboss = {getWay:'http://112.84.178.27:9292'};
-wboss.getWay = "http://127.0.0.1:8080"
 function Service(svc,async){
     this.getway = "http://112.84.178.27:9292/api/"+svc+"?m=";
-    this.getway = "http://127.0.0.1:8080/api/"+svc+"?m=";
     this.async = async == undefined ? true : async;
     this.debug = true;
     return this; 
