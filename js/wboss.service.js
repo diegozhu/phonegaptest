@@ -80,7 +80,7 @@ Service.prototype.call = function(method,args,successFunc,errorFunc){
         method += ("."+getArgType(args[i]));
         args[i] = JSON.stringify(serialize(args[i])).replace(/\n/gi,"").replace(/NaN/g,"0"); //.replace("<","&lt;").replace(">","&gt;");
     }
-
+    method += "&timestamp="+(new Date()).getTime();
     args = args.join("\n");
     xhr.open("POST",method,this.async);
     if(this.async == true){
