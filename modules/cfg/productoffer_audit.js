@@ -23,7 +23,7 @@ function onCreate($page,$relativeUrl){
 	$page.find('input[name="vnoName"]').val(vnoName);
 
 	var jqGrid = $table.jqGrid({
-	    url: wboss.getWay + '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferaAuditList.object.object',
+	    url: '/data/com.wboss.wcb.offermgr.ProductOfferSvc?m=queryProductOfferaAuditList.object.object',
 	    multiselect: true,
 	    colModel: [
 	              { label: '商品ID', name: 'offerId',width: 100,key:true,hidden:true},

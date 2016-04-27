@@ -24,8 +24,7 @@ define([],function(){
             model.user(ko.mapping.fromJS(user));
             $(document).trigger('loginok');
         },function(res){
-            debugger
-            window.location = "index.html";
+            location.href = "/admin/login.html";
         });
     };
     module.choseRole = function (){
@@ -55,7 +54,7 @@ define([],function(){
 
     module.logout = function(){
         this.loginAdminSvc.call('logout',[],function(){
-           window.location = "index.html";
+           location.href = "/admin/login.html";
         });
     };
     return module;

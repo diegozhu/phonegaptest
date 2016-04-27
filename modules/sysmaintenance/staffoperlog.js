@@ -35,7 +35,7 @@ var rowId =$("#privilege_rolemanage_dataTable").jqGrid('getGridParam','selrow');
 var rowData = $("#privilege_rolemanage_dataTable").getRowData(rowId);
 */
 	var jqGrid = $("#sysmaintenance_staffoperlog_dataTable").jqGrid({
-	    url: wboss.getWay + '/data/com.wboss.wcb.operationlog.OperationLogSvc?m=queryRoleList4Jq.object.object',
+	    url: '/data/com.wboss.wcb.operationlog.OperationLogSvc?m=queryRoleList4Jq.object.object',
 	    colModel: [
 	        { label: '操作工号', name: 'staffCode' },
 	        { label: '服务名', name: 'svcName',editable:true},

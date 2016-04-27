@@ -7,7 +7,7 @@ define(function() {
 	function onCreate($page, $relativeUrl) {
 		var STATUS={'00A':'可用','00F':'已冻结'};
 		var jqGroupGrid = $("#integral_qryintegral_dataTable").jqGrid({
-		    url: wboss.getWay + '/data/data/com.wboss.wcb.integralmgr.IntegralCustSvc?m=queryIntegralCustList.object.object',
+		    url: '/data/data/com.wboss.wcb.integralmgr.IntegralCustSvc?m=queryIntegralCustList.object.object',
 		    colModel: [
 		   	        { label: '积分类型', name: 'integralTypeName'},
 		   	        { label: '积分', name: '#',sortable:false,formatter: function (cellValue, options, rowObject){
@@ -23,7 +23,7 @@ define(function() {
 		});
 		
 		var jqCustEvenGrid = $("#integral_cust_event_dataTable").jqGrid({
-		    url: wboss.getWay + '/data/data/com.wboss.wcb.integralmgr.IntegralCustEventSvc?m=queryintegralCustEventList.object.object',
+		    url: '/data/data/com.wboss.wcb.integralmgr.IntegralCustEventSvc?m=queryintegralCustEventList.object.object',
 		    colModel: [
 		   	        { label: '积分事件', name: 'custEventInstId'},
 		   	        { label: '积分类型', name: 'integralTypeName'},
@@ -82,7 +82,7 @@ define(function() {
 		}
 
 		var jqItemGrid = $("#integral_present_item_dataTable").jqGrid({
-		    url: wboss.getWay + '/data/data/com.wboss.wcb.integralmgr.IntegralPresentItemSvc?m=queryIntegralPresentItemList.object.object',
+		    url: '/data/data/com.wboss.wcb.integralmgr.IntegralPresentItemSvc?m=queryIntegralPresentItemList.object.object',
 		    colModel: [
 		   	        { label: '兑换流水', name: 'orderSeq'},
 		   	        { label: '积分类型', name: 'integralTypeName'},

@@ -195,7 +195,7 @@ function onCreate($page,$relativeUrl){
 	   });
 	   	
 		var  priGrid = $('#privilege_staffRoleDataTable').jqGrid({
-				url: wboss.getWay + '/data/com.wboss.general.staff.RoleSvc?m=queryRoleList4Jq.object.object',
+				url: '/data/com.wboss.general.staff.RoleSvc?m=queryRoleList4Jq.object.object',
 			    multiselect: true,
 			    colModel: [
 			        { label: '角色编码', name: 'roleId', key: true},

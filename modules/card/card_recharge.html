@@ -16,21 +16,21 @@
 		<div class="col-lg-12 col-sm-12 col-md-12 ">
 			<label for="custCode" class="col-lg-2 col-sm-2 col-md-2 control-label">客户账号</label>
 			<div class="col-lg-10 col-sm-10 col-md-10">
-				<input type="text" class="form-control editable creatable" name="custCode" validate="{required:true, uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'isCustCodeExists', params: ['vnoId']},messages: {required:'请输入内容',uniqueCheck:'账号不存在'}}"  />
+				<input type="text" class="form-control editable creatable" name="custCode" validate="{required:true, uniqueCheck: {url: 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'isCustCodeExists', params: ['vnoId']},messages: {required:'请输入内容',uniqueCheck:'账号不存在'}}"  />
 			</div>
 		</div>
 	        
 		<div class="col-lg-12 col-sm-12 col-md-12 ">
 			<label for="cardNo" class="col-lg-2 col-sm-2 col-md-2 control-label">充值卡号</label>
 			<div class="col-lg-10 col-sm-10 col-md-10">
-				<input type="text" class="form-control editable creatable" name="cardNo" validate="{required:true, uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'isCardNoExists'},messages: {required:'请输入内容',uniqueCheck:'卡号不存在'}}"  />
+				<input type="text" class="form-control editable creatable" name="cardNo" validate="{required:true, uniqueCheck: {url: 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'isCardNoExists'},messages: {required:'请输入内容',uniqueCheck:'卡号不存在'}}"  />
 			</div>
 		</div>
 		
 		<div class="col-lg-12 col-sm-12 col-md-12  form-group">
 			<label for="pinCode" class="col-lg-2 col-sm-2 col-md-2 control-label">卡密码</label>
 			<div class="col-lg-10 col-sm-10 col-md-10">
-				<input type="password" class="form-control editable creatable" name="pinCode" validate="{required:true, uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'checkPinCode', params: ['cardNo']},messages: {required:'请输入内容',uniqueCheck:'密码不正确'}}"  />
+				<input type="password" class="form-control editable creatable" name="pinCode" validate="{required:true, uniqueCheck: {url: 'com.wboss.wcb.cardinfo.CardInfoSvc', method: 'checkPinCode', params: ['cardNo']},messages: {required:'请输入内容',uniqueCheck:'密码不正确'}}"  />
 			</div>
 		</div>
 		

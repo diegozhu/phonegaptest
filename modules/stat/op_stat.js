@@ -47,7 +47,7 @@ define(function (){
 		var $table=$("#stat_op_stat_dataTable");
 		var endDate=$page.find("input[name='endDate']").val();
 		var jqGrid = $table.jqGrid({
-		    url: wboss.getWay + '/data/com.wboss.wcb.auth.report.ComBusiStatSvc?m=jqCBSList.object.object',
+		    url: '/data/com.wboss.wcb.auth.report.ComBusiStatSvc?m=jqCBSList.object.object',
 //		    shrinkToFit:false,
 //		    autoScroll: true, 
 		    postData:{param:JSON.stringify({beginDate: getBeginDate(endDate),endDate:endDate,checked:"false",vnoId:vnoId})},

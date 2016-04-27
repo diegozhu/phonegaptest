@@ -36,7 +36,7 @@ function onCreate($page, $relativeUrl){
 		});
 	});
 	var jqGrid = $table.jqGrid({
-	    url: wboss.getWay + '/data/com.wboss.general.param.SysParamSvc?m=queryParamList4Jq.object.object',
+	    url: '/data/com.wboss.general.param.SysParamSvc?m=queryParamList4Jq.object.object',
 	    colModel:[
 		{label:'参数编码',name:'paramCode'},
 		{label:'参数类型编码',name:'paramTypeCode',width:'150px',editable:true},

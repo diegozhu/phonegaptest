@@ -30,7 +30,7 @@
 	<div class="col-lg-6 col-sm-12 col-md-12 ">
 		<label for="custTemplateName" class="col-lg-3 col-sm-3 col-md-2 control-label">模板名称</label> 
 		<div class="col-lg-9 col-sm-9 col-md-10"> 
-			<input type="text" class="creatable editable form-control" name='custTemplateName' validate="{required:true,messages: {required:'请输入模板名称',uniqueCheck:'模板名称已存在'},uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.custmgr.FastCustTemplateSvc', method: 'queryFasCustTemplate'}}"  /> 
+			<input type="text" class="creatable editable form-control" name='custTemplateName' validate="{required:true,messages: {required:'请输入模板名称',uniqueCheck:'模板名称已存在'},uniqueCheck: {url:'com.wboss.wcb.custmgr.FastCustTemplateSvc', method: 'queryFasCustTemplate'}}"  /> 
 		</div> 
 	</div>
 	<div class="col-lg-6 col-sm-12 col-md-12 ">

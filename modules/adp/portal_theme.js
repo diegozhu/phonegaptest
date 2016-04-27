@@ -124,7 +124,7 @@ define(function () {
 		});
 		
 		var jqGrid = $table.jqGrid({
-		    url: wboss.getWay + '/data/com.wboss.wcb.admin.theme.PortalThemeSvc?m=queryPortalThemeList4Jq.object.object',
+		    url: '/data/com.wboss.wcb.admin.theme.PortalThemeSvc?m=queryPortalThemeList4Jq.object.object',
 		    colModel: [
 		        { name: 'portalThemeId', hidden:true},
 		        { label: 'PORTAL主题名称', name: 'portalThemeName'},
@@ -167,7 +167,7 @@ define(function () {
 		});
 		
 		var pcGrid = $('#adp_pc_show_template_dataTable').jqGrid({
-			url: wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=qryAdShowTemplateByThemeId.object.object',
+			url: '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=qryAdShowTemplateByThemeId.object.object',
 			datatype: 'local',
 		    colModel: [
 		        { label: '',name: 'themeMemberId', hidden: true},
@@ -206,7 +206,7 @@ define(function () {
 		});
 		
 		var mobileGrid = $('#adp_mobile_show_template_dataTable').jqGrid({
-			url: wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=qryAdShowTemplateByThemeId.object.object',
+			url: '/data/com.wboss.wcb.admin.ad.AdShowTemplateSvc?m=qryAdShowTemplateByThemeId.object.object',
 			datatype: 'local',
 		    colModel: [
 		        { label: '',name: 'themeMemberId', hidden: true},

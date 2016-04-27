@@ -30,7 +30,7 @@
 	<div class="col-lg-6 col-sm-12 col-md-12 ">
 		<label for="portalAccPolicyId" class="col-lg-2 col-sm-3 col-md-2 control-label"  >策略名称</label> 
 		<div class="col-lg-10 col-sm-9 col-md-10"> 
-			<input type="text" class="form-control editable creatable" name="policyName" validate="{required:true,messages: {required:'请输入内容',uniqueCheck:'策略名称已存在'},uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.auth.authmgr.PortalAccPolicySvc', method: 'queryPortalAcc'}}"  /> 
+			<input type="text" class="form-control editable creatable" name="policyName" validate="{required:true,messages: {required:'请输入内容',uniqueCheck:'策略名称已存在'},uniqueCheck: {url:'com.wboss.wcb.auth.authmgr.PortalAccPolicySvc', method: 'queryPortalAcc'}}"  /> 
 		</div> 
 	</div>
 	

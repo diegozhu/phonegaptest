@@ -70,7 +70,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var jqGrid = $("#privilege_rolemanage_dataTable").jqGrid({
-	    url: wboss.getWay + '/data/com.wboss.general.staff.RoleSvc?m=queryRoleList4Jq.object.object',
+	    url: '/data/com.wboss.general.staff.RoleSvc?m=queryRoleList4Jq.object.object',
 	    colModel: [
 	        { label: '角色编码', name: 'roleId', hidden: true},
 	        { label: '角色名称', name: 'roleName'},
@@ -113,7 +113,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var  priGrid = $('#privilege_dataTable').jqGrid({
-	    url: wboss.getWay + '/data/com.wboss.general.staff.PrivilegeSvc?m=queryPrivilegeList.object.object',
+	    url: '/data/com.wboss.general.staff.PrivilegeSvc?m=queryPrivilegeList.object.object',
 	    multiselect: true,
 	    colModel: [
 	    	{ label: '', name: 'privilegeId', hidden: true, key: true},

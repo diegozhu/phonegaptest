@@ -52,7 +52,7 @@ define (function(){
 		var $table = $("#adp_ad_check_dataTable");
 		var validator=$form.validate();
 		var jqGrid = $table.jqGrid({
-		    url: wboss.getWay + '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=jqueryAdInstanceVoList.object.object',
+		    url: '/data/com.wboss.wcb.admin.ad.AdMgrSvc?m=jqueryAdInstanceVoList.object.object',
 		    multiselect: true,
 		    datatype:'local',
 		    colModel:[

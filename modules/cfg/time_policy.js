@@ -154,7 +154,7 @@ function onCreate($page,$relativeUrl){
     	}
 	};
 	var jqGrid = $("#cfg_time_policy_dataTable").jqGrid({
-		    url: wboss.getWay + '/data/com.wboss.wcb.rating.config.TimeSpanCfgSvc?m=queryTimeSpanList4Jq.object.object',
+		    url: '/data/com.wboss.wcb.rating.config.TimeSpanCfgSvc?m=queryTimeSpanList4Jq.object.object',
 		    colModel: [
 		        {name:"timeSpanId",hidden:true},
 		        { label: '时段名称', name: 'timeSpanName'},

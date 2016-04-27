@@ -45,7 +45,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var jqGrid = $table.jqGrid({
-	    url: wboss.getWay + '/data/com.wboss.wcb.unicom.UnicomBillSvc?m=queryForJqGrid.object.object',
+	    url: '/data/com.wboss.wcb.unicom.UnicomBillSvc?m=queryForJqGrid.object.object',
 	    colModel: [
 	   	        { name: 'unicomBillId', label: '账单号',width: 200},
 { name : 'mobilePhone', label: '手机号',width: 200},

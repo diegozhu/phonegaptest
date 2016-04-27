@@ -21,7 +21,7 @@
 	<div class="col-lg-6 col-sm-12 col-md-12 ">
 		<label for="roleName" class="col-lg-3 col-sm-3 col-md-2 control-label">角色名称</label> 
 		<div class="col-lg-9 col-sm-9 col-md-10"> 
-			<input type="text" class="form-control editable creatable" name="roleName" validate="{required:true, uniqueCheck: {url: wboss.getWay + 'com.wboss.general.staff.RoleSvc', method: 'queryRole'}}"  /> 
+			<input type="text" class="form-control editable creatable" name="roleName" validate="{required:true, uniqueCheck: {url: 'com.wboss.general.staff.RoleSvc', method: 'queryRole'}}"  /> 
 			<input type="hidden" name="roleId" /> 
 		</div> 
 	</div>

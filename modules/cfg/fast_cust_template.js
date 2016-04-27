@@ -87,7 +87,7 @@ function onCreate($page,$relativeUrl){
 	});
 
 	var jqGrid = $table.jqGrid({
-	    url: wboss.getWay + '/data/com.wboss.wcb.custmgr.FastCustTemplateSvc?m=queryFastCustTemplate.object.object',
+	    url: '/data/com.wboss.wcb.custmgr.FastCustTemplateSvc?m=queryFastCustTemplate.object.object',
 	    colModel: [
 	   	        { label: '模板ID', name: 'custTemplateId',width: 200},
 	   	        { label: '模板名称', name: 'custTemplateName',width: 200},

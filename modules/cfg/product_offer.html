@@ -33,7 +33,7 @@
 	<div class="col-lg-6 col-sm-12 col-md-12 ">
 		<label for="offerName" class="col-lg-2 col-sm-3 col-md-2 control-label">商品名称</label> 
 		<div class="col-lg-10 col-sm-9 col-md-10"> 
-			<input type="text" class="creatable editable form-control" name="offerName" validate="{required:true,messages: {required:'请输入商品名称',uniqueCheck:'商品名称已存在'},uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.offermgr.ProductOfferSvc', method: 'queryProductOffer'}}"  /> 
+			<input type="text" class="creatable editable form-control" name="offerName" validate="{required:true,messages: {required:'请输入商品名称',uniqueCheck:'商品名称已存在'},uniqueCheck: {url:'com.wboss.wcb.offermgr.ProductOfferSvc', method: 'queryProductOffer'}}"  /> 
 		</div> 
 	</div>
 	<div class="col-lg-6 col-sm-12 col-md-12 ">
@@ -63,7 +63,7 @@
 	<div class="col-lg-6 col-sm-12 col-md-12 ">
 		<label for="offerCode" class="col-lg-2 col-sm-3 col-md-2 control-label">商品编码</label> 
 		<div class="col-lg-10 col-sm-9 col-md-10">  
-			<input type="text" class="form-control editable creatable" name="offerCode" validate="{required:true,rangelength:[5,10],messages: {required:'请输入商品编码',uniqueCheck:'商品编码已存在',rangelength:'请输入5到10位编码'},uniqueCheck: {url: wboss.getWay + 'com.wboss.wcb.offermgr.ProductOfferSvc', method: 'queryProductofferCode'}}" /> 
+			<input type="text" class="form-control editable creatable" name="offerCode" validate="{required:true,rangelength:[5,10],messages: {required:'请输入商品编码',uniqueCheck:'商品编码已存在',rangelength:'请输入5到10位编码'},uniqueCheck: {url:'com.wboss.wcb.offermgr.ProductOfferSvc', method: 'queryProductofferCode'}}" /> 
 		</div> 
 	</div>
 		<div class="col-lg-6 col-sm-12 col-md-12 ">

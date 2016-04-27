@@ -3,15 +3,15 @@ define(function (){
 	
 	function onCreate($page,$relativeUrl){
 		var URL_PREFIX= 'modules/stat/', REPORT_URL='',STAT_DATA=[{id: '1', name: '统计报表', parentId: null, leafNum: 5},
-		               {id: '101', name: '自营用户统计', parentId: '1', url: wboss.getWay + 'selfuser/selfuser_stat'},
-		               {id: '102', name: '活跃用户统计', parentId: '1', url: wboss.getWay + 'activeuser/activeuser_stat'},
-		               {id: '103', name: '用户统计', parentId: '1', url: wboss.getWay + 'userstatistics/userstatistics_report'},
-		               {id: '104', name: '出账统计', parentId: '1', url: wboss.getWay + 'unicombill/unicom_bill'},
-		               {id: '105', name: '开户统计', parentId: '1', url: wboss.getWay + 'openaccount/openaccount_stat'},
-		       //      {id: '106', name: '出账明细', parentId: '1', url: wboss.getWay + 'accountdetail/accountdetail'},
-		               {id: '107', name: '开户统计汇总', parentId: '1', url: wboss.getWay + 'openaccount/openaccount_summary'},
-		               {id: '108', name: '用户充值', parentId: '1', url: wboss.getWay + 'usersrecharge/user_srecharge'},
-		               {id: '109', name: '用户企业类型统计', parentId: '1', url: wboss.getWay + 'enterprisetype/enterprisetype_report'}];
+		               {id: '101', name: '自营用户统计', parentId: '1', url: 'selfuser/selfuser_stat'},
+		               {id: '102', name: '活跃用户统计', parentId: '1', url: 'activeuser/activeuser_stat'},
+		               {id: '103', name: '用户统计', parentId: '1', url: 'userstatistics/userstatistics_report'},
+		               {id: '104', name: '出账统计', parentId: '1', url: 'unicombill/unicom_bill'},
+		               {id: '105', name: '开户统计', parentId: '1', url: 'openaccount/openaccount_stat'},
+		       //      {id: '106', name: '出账明细', parentId: '1', url: 'accountdetail/accountdetail'},
+		               {id: '107', name: '开户统计汇总', parentId: '1', url: 'openaccount/openaccount_summary'},
+		               {id: '108', name: '用户充值', parentId: '1', url: 'usersrecharge/user_srecharge'},
+		               {id: '109', name: '用户企业类型统计', parentId: '1', url: 'enterprisetype/enterprisetype_report'}];
 		
 		var sysparam = new Service("com.wboss.general.param.SysParamSvc");
 		sysparam.call('getReportRemoteRequestParam', [{paramCode:'REPORT_REMOTE_REQUEST_PARAM'}],function(res) {

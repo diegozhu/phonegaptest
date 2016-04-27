@@ -29,7 +29,7 @@ define(function(){
 			});
 			
 			var jqGrid = $page.find("#enterprisetype_dataTable").jqGrid({
-			    url: wboss.getWay + '/data/com.wboss.report.userstat.UserTypeReportSvc?m=selectUserTypeList.object.object',
+			    url: '/data/com.wboss.report.userstat.UserTypeReportSvc?m=selectUserTypeList.object.object',
 			    datatype:'local',
 			    recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 			    colNames: ['自营', 'SI', '自营+SI', '免费', 'ICT', '空', '体验用户数', '总数'],

@@ -22,7 +22,7 @@
 		<div class="col-lg-12 col-sm-12 col-md-12 ">
 			<label for="portalThemeName" class="col-lg-2 col-sm-2 col-md-2 control-label">主题名称</label>
 			<div class="col-lg-10 col-sm-10 col-md-10">
-				<input type="text" class="editable creatable form-control" name="portalThemeName" validate="{required:true, uniqueCheck:{url: wboss.getWay + 'com.wboss.wcb.admin.theme.PortalThemeSvc', method:'queryPortalTheme'}, messages: {required:'请输入主题名称', uniqueCheck:'名称已存在,请重输'}}" />
+				<input type="text" class="editable creatable form-control" name="portalThemeName" validate="{required:true, uniqueCheck:{url:'com.wboss.wcb.admin.theme.PortalThemeSvc', method:'queryPortalTheme'}, messages: {required:'请输入主题名称', uniqueCheck:'名称已存在,请重输'}}" />
 			</div>
 		</div>
 		<div class="col-lg-12 col-sm-12 col-md-12 ">

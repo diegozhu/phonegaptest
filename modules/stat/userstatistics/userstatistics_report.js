@@ -15,7 +15,7 @@ define(function(){
 		
 		var $table = $page.find("#userStatistics_parentRegion_dataTable");
 		var parentJqGrid = $page.find("#userStatistics_parentRegion_dataTable").jqGrid({
-		    url: wboss.getWay + '/data/com.wboss.report.userstat.UserStatReportSvc?m=queryProvinceUserStatList4Jq2.object.object',
+		    url: '/data/com.wboss.report.userstat.UserStatReportSvc?m=queryProvinceUserStatList4Jq2.object.object',
 		    datatype:'local',
 		    recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 		    postData :{param:JSON.stringify({regionName:$page.find("input[name='regionName']").val(),startTime:$page.find("input[name='startTime']").val(),endTime:$page.find("input[name='endTime']").val()})},
@@ -65,7 +65,7 @@ define(function(){
 		});
 		
 		var childJqGrid = $page.find("#userStatistics_childRegion_dataTable").jqGrid({
-		    url: wboss.getWay + '/data/com.wboss.report.userstat.UserStatReportSvc?m=queryCityUserStatList4Jq2.object.object',
+		    url: '/data/com.wboss.report.userstat.UserStatReportSvc?m=queryCityUserStatList4Jq2.object.object',
 		    datatype:'local',
 		    recordtext: "<span class='glyphicon glyphicon-refresh refresh pointer btn-refresh mt10'></span> &nbsp; {0}-{1}, 共{2}条   &nbsp;",
 		    postData :{param:JSON.stringify({regionName:$page.find("input[name='regionName']").val(),startTime:$page.find("input[name='startTime']").val(),endTime:$page.find("input[name='endTime']").val()})},
