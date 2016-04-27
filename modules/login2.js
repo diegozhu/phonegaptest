@@ -54,7 +54,7 @@ define([],function(){
 
     module.logout = function(){
         this.loginAdminSvc.call('logout',[],function(){
-           location.href = "/admin/login.html";
+           location.href = "login.html";
         });
     };
     return module;

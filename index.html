@@ -17,12 +17,12 @@
 		errorCount = count;
 		if(count>2){
 			$("#codeArea").show();
-			$("#codeArea").find("img").attr("src","http://112.84.178.27:9292/image?"+(new Date()).getTime());
+			$("#codeArea").find("img").attr("src", wboss.getWay + "/image?"+(new Date()).getTime());
 		}
 	});
 	
 	$("#codeArea img").on("click",function(){
-		$("#codeArea").find("img").attr("src","http://112.84.178.27:9292/image?"+(new Date()).getTime());
+		$("#codeArea").find("img").attr("src",wboss.getWay + "/image?"+(new Date()).getTime());
 	});
 	  
 	  $(".logins").on("click",function(){
@@ -36,7 +36,7 @@
 				errorCount++;
 				if(errorCount>2){
 						$("#codeArea").show();
-						$("#codeArea").find("img").attr("src","http://112.84.178.27:9292/image?"+(new Date()).getTime());
+						$("#codeArea").find("img").attr("src",wboss.getWay + "/image?"+(new Date()).getTime());
 				}
 				alert(9);
 				alert(res);

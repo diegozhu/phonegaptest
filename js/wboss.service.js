@@ -15,9 +15,9 @@
  * com.ztesoft.wsmp.rating.charge.chargeimpl.PeapChargeSvc?reqAccessInfo.object.object
  * */
 var I18n = {};
-var wboss = {getWay:'http://112.84.178.27:9292'};
+var wboss = {getWay:'http://112.84.178.83:19090'};
 function Service(svc,async){
-    this.getway = "http://112.84.178.27:9292/api/"+svc+"?m=";
+    this.getway = "http://112.84.178.83:19090/api/"+svc+"?m=";
     this.async = async == undefined ? true : async;
     this.debug = true;
     return this; 
